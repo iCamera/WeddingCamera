@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD2959D618794B0C003EC0FD /* EditImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.m */; };
+		DD2959DD187979A8003EC0FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E71876A80A001196D4 /* AppDelegate.m */; };
+		DD2959DE187979AD003EC0FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5F31876A80A001196D4 /* ViewController.m */; };
+		DD2959DF187979B8003EC0FD /* EditImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.m */; };
 		DDCAF5D81876A80A001196D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D71876A80A001196D4 /* UIKit.framework */; };
 		DDCAF5DA1876A80A001196D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D91876A80A001196D4 /* Foundation.framework */; };
 		DDCAF5DC1876A80A001196D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */; };
@@ -36,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD2959D418794B0C003EC0FD /* EditImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditImageController.h; sourceTree = "<group>"; };
+		DD2959D518794B0C003EC0FD /* EditImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditImageController.m; sourceTree = "<group>"; };
 		DDCAF5D31876A80A001196D4 /* WeddingCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCAF5D71876A80A001196D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDCAF5D91876A80A001196D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +128,8 @@
 				DDCAF5EF1876A80A001196D4 /* MainStoryboard.storyboard */,
 				DDCAF5F21876A80A001196D4 /* ViewController.h */,
 				DDCAF5F31876A80A001196D4 /* ViewController.m */,
+				DD2959D418794B0C003EC0FD /* EditImageController.h */,
+				DD2959D518794B0C003EC0FD /* EditImageController.m */,
 				DDCAF5DE1876A80A001196D4 /* Supporting Files */,
 			);
 			path = WeddingCamera;
@@ -273,6 +281,7 @@
 				DDCAF5E41876A80A001196D4 /* main.m in Sources */,
 				DDCAF5E81876A80A001196D4 /* AppDelegate.m in Sources */,
 				DDCAF5F41876A80A001196D4 /* ViewController.m in Sources */,
+				DD2959D618794B0C003EC0FD /* EditImageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2959DF187979B8003EC0FD /* EditImageController.m in Sources */,
+				DD2959DE187979AD003EC0FD /* ViewController.m in Sources */,
+				DD2959DD187979A8003EC0FD /* AppDelegate.m in Sources */,
 				DDCAF6091876A80A001196D4 /* WeddingCameraTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +459,7 @@
 				DDCAF60E1876A80A001196D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDCAF60F1876A80A001196D4 /* Build configuration list for PBXNativeTarget "WeddingCameraTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +468,7 @@
 				DDCAF6111876A80A001196D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

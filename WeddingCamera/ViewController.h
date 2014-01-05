@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+
+- (IBAction)showCameraAction:(id)sender;
+- (IBAction)showPhotoAlbumAction:(id)sender;
+
 
 @end
