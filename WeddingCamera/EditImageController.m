@@ -7,6 +7,7 @@
 //
 
 #import "EditImageController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation EditImageController {
     __weak IBOutlet UIImage *editImage;
@@ -20,6 +21,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    // 選択した画像を設定
     editImageView.image = editImage;
     
     // 最初はスタンプモードでない
@@ -34,8 +37,8 @@
 
 
 - (IBAction)saveImageAction:(id)sender {
-    UIImage *image = editImageView.image;
-    UIImageWriteToSavedPhotosAlbum(image,NULL,NULL,NULL);
+    UIImage *saveImage = [self captureImage];
+    UIImageWriteToSavedPhotosAlbum(saveImage,NULL,NULL,NULL);
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -49,6 +52,37 @@
     UIImageView *currentStampView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 64, 64)];
     currentStampView.image = [UIImage imageNamed:@"sax.png"];
     [self.editImageView addSubview:currentStampView];
+}
+
+// キャプチャをとって画像を保存
+// 領域を指定して画像を切り抜く
+-(UIImage *)captureImage
+{
+    // 描画領域の設定
+    CGSize size = CGSizeMake(editImageView.frame.size.width , editImageView.frame.size.height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    
+    // グラフィックスコンテキスト取得
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // コンテキストの位置を切り取り開始位置に合わせる
+    CGPoint point = editImageView.frame.origin;
+    CGAffineTransform affineMoveLeftTop
+    = CGAffineTransformMakeTranslation(
+                                       -(int)point.x ,
+                                       -(int)point.y );
+    CGContextConcatCTM(context , affineMoveLeftTop );
+    
+    // viewから切り取る
+    [(CALayer*)self.view.layer renderInContext:context];
+    
+    // 切り取った内容をUIImageとして取得
+    UIImage *cnvImg = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // コンテキストの破棄
+    UIGraphicsEndImageContext();
+    
+    return cnvImg;
 }
 
 @end
