@@ -7,6 +7,7 @@
 //
 
 #import "EditImageController.h"
+#import "StampListViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation EditImageController {
@@ -49,9 +50,12 @@
 // あとでシーン追加して画像選択できるようにする
 // とりあえず固定の画像を画面にはりつける
 - (IBAction)chooseStampAction:(id)sender {
-    UIImageView *currentStampView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 64, 64)];
-    currentStampView.image = [UIImage imageNamed:@"sax.png"];
-    [self.editImageView addSubview:currentStampView];
+    
+    StampListViewController * stampListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StampListViewController"];
+    [self.navigationController pushViewController:stampListViewController animated:YES];
+    //UIImageView *currentStampView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 64, 64)];
+    //currentStampView.image = [UIImage imageNamed:@"stamp1.png"];
+    //[self.editImageView addSubview:currentStampView];
 }
 
 // キャプチャをとって画像を保存

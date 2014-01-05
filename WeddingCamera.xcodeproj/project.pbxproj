@@ -11,8 +11,8 @@
 		DD2959DD187979A8003EC0FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E71876A80A001196D4 /* AppDelegate.m */; };
 		DD2959DE187979AD003EC0FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5F31876A80A001196D4 /* ViewController.m */; };
 		DD2959DF187979B8003EC0FD /* EditImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.m */; };
-		DD2959E1187982B7003EC0FD /* guter.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2959E0187982B7003EC0FD /* guter.png */; };
-		DD2959E318798304003EC0FD /* sax.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2959E218798304003EC0FD /* sax.png */; };
+		DD2959E1187982B7003EC0FD /* stamp2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2959E0187982B7003EC0FD /* stamp2.png */; };
+		DD2959E318798304003EC0FD /* stamp1.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2959E218798304003EC0FD /* stamp1.png */; };
 		DD2959E518799089003EC0FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E418799089003EC0FD /* AVFoundation.framework */; };
 		DD2959E718799096003EC0FD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E618799096003EC0FD /* CoreMedia.framework */; };
 		DD2959E9187990A2003EC0FD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E8187990A2003EC0FD /* CoreVideo.framework */; };
@@ -29,6 +29,8 @@
 		DD295A1218799A92003EC0FD /* FaceFindFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0618799A90003EC0FD /* FaceFindFilter.m */; };
 		DD295A1318799A92003EC0FD /* MultiMonitorFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */; };
 		DD295A151879AC0D003EC0FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD295A141879AC0D003EC0FD /* QuartzCore.framework */; };
+		DD295A1B1879AE76003EC0FD /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A1A1879AE76003EC0FD /* StampListViewController.m */; };
+		DD295A1E1879C385003EC0FD /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A1D1879C384003EC0FD /* CollectionCell.m */; };
 		DDCAF5D81876A80A001196D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D71876A80A001196D4 /* UIKit.framework */; };
 		DDCAF5DA1876A80A001196D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D91876A80A001196D4 /* Foundation.framework */; };
 		DDCAF5DC1876A80A001196D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */; };
@@ -60,8 +62,8 @@
 /* Begin PBXFileReference section */
 		DD2959D418794B0C003EC0FD /* EditImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditImageController.h; sourceTree = "<group>"; };
 		DD2959D518794B0C003EC0FD /* EditImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditImageController.m; sourceTree = "<group>"; };
-		DD2959E0187982B7003EC0FD /* guter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guter.png; sourceTree = "<group>"; };
-		DD2959E218798304003EC0FD /* sax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sax.png; sourceTree = "<group>"; };
+		DD2959E0187982B7003EC0FD /* stamp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp2.png; sourceTree = "<group>"; };
+		DD2959E218798304003EC0FD /* stamp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp1.png; sourceTree = "<group>"; };
 		DD2959E418799089003EC0FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DD2959E618799096003EC0FD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DD2959E8187990A2003EC0FD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -88,6 +90,10 @@
 		DD295A0718799A91003EC0FD /* MultiMonitorFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiMonitorFilter.h; sourceTree = "<group>"; };
 		DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiMonitorFilter.m; sourceTree = "<group>"; };
 		DD295A141879AC0D003EC0FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DD295A191879AE76003EC0FD /* StampListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StampListViewController.h; path = ../StampListViewController.h; sourceTree = "<group>"; };
+		DD295A1A1879AE76003EC0FD /* StampListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StampListViewController.m; path = ../StampListViewController.m; sourceTree = "<group>"; };
+		DD295A1C1879C384003EC0FD /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
+		DD295A1D1879C384003EC0FD /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		DDCAF5D31876A80A001196D4 /* WeddingCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCAF5D71876A80A001196D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDCAF5D91876A80A001196D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -185,6 +191,10 @@
 				DDCAF5F31876A80A001196D4 /* ViewController.m */,
 				DD2959D418794B0C003EC0FD /* EditImageController.h */,
 				DD2959D518794B0C003EC0FD /* EditImageController.m */,
+				DD295A191879AE76003EC0FD /* StampListViewController.h */,
+				DD295A1A1879AE76003EC0FD /* StampListViewController.m */,
+				DD295A1C1879C384003EC0FD /* CollectionCell.h */,
+				DD295A1D1879C384003EC0FD /* CollectionCell.m */,
 				DD2959F318799A8D003EC0FD /* ImageFilterBase.h */,
 				DD2959F418799A8D003EC0FD /* ImageFilterBase.m */,
 				DD2959F518799A8D003EC0FD /* SettingViewController.h */,
@@ -204,8 +214,9 @@
 				DD295A0318799A90003EC0FD /* EdgeFindFilter.h */,
 				DD295A0418799A90003EC0FD /* EdgeFindFilter.m */,
 				DD295A0518799A90003EC0FD /* FaceFindFilter.h */,
+				DD2959E218798304003EC0FD /* stamp1.png */,
+				DD2959E0187982B7003EC0FD /* stamp2.png */,
 				DD295A0618799A90003EC0FD /* FaceFindFilter.m */,
-				DD2959E218798304003EC0FD /* sax.png */,
 				DD295A0718799A91003EC0FD /* MultiMonitorFilter.h */,
 				DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */,
 				DDCAF5DE1876A80A001196D4 /* Supporting Files */,
@@ -220,7 +231,6 @@
 				DDCAF5E01876A80A001196D4 /* InfoPlist.strings */,
 				DDCAF5E31876A80A001196D4 /* main.m */,
 				DDCAF5E51876A80A001196D4 /* WeddingCamera-Prefix.pch */,
-				DD2959E0187982B7003EC0FD /* guter.png */,
 				DDCAF5E91876A80A001196D4 /* Default.png */,
 				DDCAF5EB1876A80A001196D4 /* Default@2x.png */,
 				DDCAF5ED1876A80A001196D4 /* Default-568h@2x.png */,
@@ -323,8 +333,8 @@
 				DDCAF5EC1876A80A001196D4 /* Default@2x.png in Resources */,
 				DDCAF5EE1876A80A001196D4 /* Default-568h@2x.png in Resources */,
 				DDCAF5F11876A80A001196D4 /* MainStoryboard.storyboard in Resources */,
-				DD2959E1187982B7003EC0FD /* guter.png in Resources */,
-				DD2959E318798304003EC0FD /* sax.png in Resources */,
+				DD2959E1187982B7003EC0FD /* stamp2.png in Resources */,
+				DD2959E318798304003EC0FD /* stamp1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +373,8 @@
 				DDCAF5E81876A80A001196D4 /* AppDelegate.m in Sources */,
 				DDCAF5F41876A80A001196D4 /* ViewController.m in Sources */,
 				DD2959D618794B0C003EC0FD /* EditImageController.m in Sources */,
+				DD295A1B1879AE76003EC0FD /* StampListViewController.m in Sources */,
+				DD295A1E1879C385003EC0FD /* CollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
