@@ -15,6 +15,12 @@
 
 @implementation ViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+}
+
 - (IBAction)showCameraAction:(id)sender {
     
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
@@ -57,12 +63,6 @@
     // 撮影画面を非表示にする
     [self dismissViewControllerAnimated:TRUE completion:NULL];
 
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning

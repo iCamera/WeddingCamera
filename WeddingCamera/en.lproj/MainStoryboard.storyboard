@@ -50,7 +50,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="P3k-sZ-9kh" secondAttribute="trailing" constant="15" id="4cE-Y5-7hx"/>
                             <constraint firstItem="ckd-SF-EjQ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="16" id="4yA-Ap-fKm"/>
-                            <constraint firstItem="P3k-sZ-9kh" firstAttribute="baseline" secondItem="ckd-SF-EjQ" secondAttribute="baseline" type="default" id="8ji-qn-kjn"/>
                             <constraint firstItem="ckd-SF-EjQ" firstAttribute="bottom" secondItem="P3k-sZ-9kh" secondAttribute="bottom" type="default" id="KFI-QD-l1t"/>
                             <constraint firstItem="P3k-sZ-9kh" firstAttribute="top" secondItem="ckd-SF-EjQ" secondAttribute="top" type="default" id="LVB-gT-HdI"/>
                             <constraint firstItem="ckd-SF-EjQ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="180" id="f5N-FK-b0b"/>
@@ -71,15 +70,33 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RbN-4E-Vev">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="416" id="xn9-P2-4mK"/>
-                                </constraints>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFm-pe-LhR">
+                                <items>
+                                    <barButtonItem title="stamp" id="wMT-BK-qKb"/>
+                                    <barButtonItem title="filter" id="frl-FJ-27F"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ymx-9x-ghG"/>
+                                    <barButtonItem title="save" id="5AJ-GA-epf">
+                                        <connections>
+                                            <action selector="saveImageAction:" destination="X6u-0i-RNw" id="r3h-aZ-d9R"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="cancel" id="eZE-IS-RKx">
+                                        <connections>
+                                            <action selector="cancelImageAction:" destination="X6u-0i-RNw" id="vXQ-8Q-xy3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RbN-4E-Vev" firstAttribute="leading" secondItem="HUS-XH-y3R" secondAttribute="leading" type="default" id="Ohu-8K-OOy"/>
+                            <constraint firstItem="KFm-pe-LhR" firstAttribute="leading" secondItem="HUS-XH-y3R" secondAttribute="leading" type="default" id="Roa-aQ-K3Y"/>
+                            <constraint firstItem="KFm-pe-LhR" firstAttribute="bottom" secondItem="HUS-XH-y3R" secondAttribute="bottom" type="default" id="YZt-0g-C5o"/>
                             <constraint firstItem="RbN-4E-Vev" firstAttribute="trailing" secondItem="HUS-XH-y3R" secondAttribute="trailing" type="default" id="dVT-xX-1iR"/>
+                            <constraint firstItem="KFm-pe-LhR" firstAttribute="trailing" secondItem="HUS-XH-y3R" secondAttribute="trailing" type="default" id="eTM-aI-BHh"/>
+                            <constraint firstItem="KFm-pe-LhR" firstAttribute="top" secondItem="RbN-4E-Vev" secondAttribute="bottom" type="default" id="sPe-Bg-tDd"/>
                             <constraint firstItem="RbN-4E-Vev" firstAttribute="top" secondItem="HUS-XH-y3R" secondAttribute="top" type="default" id="xPL-ic-RGa"/>
                         </constraints>
                     </view>
@@ -108,25 +125,6 @@
             <point key="canvasLocation" x="-297" y="-24"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="EditImageController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditImageController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="editImage" candidateClass="UIImage"/>
-                <relationship kind="outlet" name="editImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showCameraAction:"/>
-                <relationship kind="action" name="showPhotoAlbumAction:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
