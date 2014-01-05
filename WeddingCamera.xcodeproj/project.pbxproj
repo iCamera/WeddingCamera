@@ -13,6 +13,21 @@
 		DD2959DF187979B8003EC0FD /* EditImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.m */; };
 		DD2959E1187982B7003EC0FD /* guter.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2959E0187982B7003EC0FD /* guter.png */; };
 		DD2959E318798304003EC0FD /* sax.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2959E218798304003EC0FD /* sax.png */; };
+		DD2959E518799089003EC0FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E418799089003EC0FD /* AVFoundation.framework */; };
+		DD2959E718799096003EC0FD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E618799096003EC0FD /* CoreMedia.framework */; };
+		DD2959E9187990A2003EC0FD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E8187990A2003EC0FD /* CoreVideo.framework */; };
+		DD2959EA187990BB003EC0FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */; };
+		DD295A0918799A92003EC0FD /* ImageFilterBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F418799A8D003EC0FD /* ImageFilterBase.m */; };
+		DD295A0A18799A92003EC0FD /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F618799A8D003EC0FD /* SettingViewController.m */; };
+		DD295A0B18799A92003EC0FD /* BrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F818799A8E003EC0FD /* BrightnessFilter.m */; };
+		DD295A0C18799A92003EC0FD /* GrayScaleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FA18799A8E003EC0FD /* GrayScaleFilter.m */; };
+		DD295A0D18799A92003EC0FD /* SepiaFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FC18799A8E003EC0FD /* SepiaFilter.m */; };
+		DD295A0E18799A92003EC0FD /* MosaicFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FE18799A8F003EC0FD /* MosaicFilter.m */; };
+		DD295A0F18799A92003EC0FD /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0018799A8F003EC0FD /* FishEyeFilter.m */; };
+		DD295A1018799A92003EC0FD /* GaussianFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0218799A90003EC0FD /* GaussianFilter.m */; };
+		DD295A1118799A92003EC0FD /* EdgeFindFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0418799A90003EC0FD /* EdgeFindFilter.m */; };
+		DD295A1218799A92003EC0FD /* FaceFindFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0618799A90003EC0FD /* FaceFindFilter.m */; };
+		DD295A1318799A92003EC0FD /* MultiMonitorFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */; };
 		DDCAF5D81876A80A001196D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D71876A80A001196D4 /* UIKit.framework */; };
 		DDCAF5DA1876A80A001196D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D91876A80A001196D4 /* Foundation.framework */; };
 		DDCAF5DC1876A80A001196D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */; };
@@ -46,6 +61,31 @@
 		DD2959D518794B0C003EC0FD /* EditImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditImageController.m; sourceTree = "<group>"; };
 		DD2959E0187982B7003EC0FD /* guter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guter.png; sourceTree = "<group>"; };
 		DD2959E218798304003EC0FD /* sax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sax.png; sourceTree = "<group>"; };
+		DD2959E418799089003EC0FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DD2959E618799096003EC0FD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DD2959E8187990A2003EC0FD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		DD2959F318799A8D003EC0FD /* ImageFilterBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilterBase.h; sourceTree = "<group>"; };
+		DD2959F418799A8D003EC0FD /* ImageFilterBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilterBase.m; sourceTree = "<group>"; };
+		DD2959F518799A8D003EC0FD /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		DD2959F618799A8D003EC0FD /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		DD2959F718799A8E003EC0FD /* BrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessFilter.h; sourceTree = "<group>"; };
+		DD2959F818799A8E003EC0FD /* BrightnessFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrightnessFilter.m; sourceTree = "<group>"; };
+		DD2959F918799A8E003EC0FD /* GrayScaleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayScaleFilter.h; sourceTree = "<group>"; };
+		DD2959FA18799A8E003EC0FD /* GrayScaleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayScaleFilter.m; sourceTree = "<group>"; };
+		DD2959FB18799A8E003EC0FD /* SepiaFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SepiaFilter.h; sourceTree = "<group>"; };
+		DD2959FC18799A8E003EC0FD /* SepiaFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SepiaFilter.m; sourceTree = "<group>"; };
+		DD2959FD18799A8E003EC0FD /* MosaicFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicFilter.h; sourceTree = "<group>"; };
+		DD2959FE18799A8F003EC0FD /* MosaicFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicFilter.m; sourceTree = "<group>"; };
+		DD2959FF18799A8F003EC0FD /* FishEyeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
+		DD295A0018799A8F003EC0FD /* FishEyeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
+		DD295A0118799A8F003EC0FD /* GaussianFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianFilter.h; sourceTree = "<group>"; };
+		DD295A0218799A90003EC0FD /* GaussianFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussianFilter.m; sourceTree = "<group>"; };
+		DD295A0318799A90003EC0FD /* EdgeFindFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeFindFilter.h; sourceTree = "<group>"; };
+		DD295A0418799A90003EC0FD /* EdgeFindFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EdgeFindFilter.m; sourceTree = "<group>"; };
+		DD295A0518799A90003EC0FD /* FaceFindFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceFindFilter.h; sourceTree = "<group>"; };
+		DD295A0618799A90003EC0FD /* FaceFindFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceFindFilter.m; sourceTree = "<group>"; };
+		DD295A0718799A91003EC0FD /* MultiMonitorFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiMonitorFilter.h; sourceTree = "<group>"; };
+		DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiMonitorFilter.m; sourceTree = "<group>"; };
 		DDCAF5D31876A80A001196D4 /* WeddingCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCAF5D71876A80A001196D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDCAF5D91876A80A001196D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,6 +125,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2959EA187990BB003EC0FD /* CoreGraphics.framework in Frameworks */,
+				DD2959E9187990A2003EC0FD /* CoreVideo.framework in Frameworks */,
+				DD2959E718799096003EC0FD /* CoreMedia.framework in Frameworks */,
+				DD2959E518799089003EC0FD /* AVFoundation.framework in Frameworks */,
 				DDCAF5FC1876A80A001196D4 /* SenTestingKit.framework in Frameworks */,
 				DDCAF5FD1876A80A001196D4 /* UIKit.framework in Frameworks */,
 				DDCAF5FE1876A80A001196D4 /* Foundation.framework in Frameworks */,
@@ -97,6 +141,9 @@
 		DDCAF5C81876A80A001196D4 = {
 			isa = PBXGroup;
 			children = (
+				DD2959E8187990A2003EC0FD /* CoreVideo.framework */,
+				DD2959E618799096003EC0FD /* CoreMedia.framework */,
+				DD2959E418799089003EC0FD /* AVFoundation.framework */,
 				DDCAF5DD1876A80A001196D4 /* WeddingCamera */,
 				DDCAF6011876A80A001196D4 /* WeddingCameraTests */,
 				DDCAF5D61876A80A001196D4 /* Frameworks */,
@@ -134,6 +181,29 @@
 				DDCAF5F31876A80A001196D4 /* ViewController.m */,
 				DD2959D418794B0C003EC0FD /* EditImageController.h */,
 				DD2959D518794B0C003EC0FD /* EditImageController.m */,
+				DD2959F318799A8D003EC0FD /* ImageFilterBase.h */,
+				DD2959F418799A8D003EC0FD /* ImageFilterBase.m */,
+				DD2959F518799A8D003EC0FD /* SettingViewController.h */,
+				DD2959F618799A8D003EC0FD /* SettingViewController.m */,
+				DD2959F718799A8E003EC0FD /* BrightnessFilter.h */,
+				DD2959F818799A8E003EC0FD /* BrightnessFilter.m */,
+				DD2959F918799A8E003EC0FD /* GrayScaleFilter.h */,
+				DD2959FA18799A8E003EC0FD /* GrayScaleFilter.m */,
+				DD2959FB18799A8E003EC0FD /* SepiaFilter.h */,
+				DD2959FC18799A8E003EC0FD /* SepiaFilter.m */,
+				DD2959FD18799A8E003EC0FD /* MosaicFilter.h */,
+				DD2959FE18799A8F003EC0FD /* MosaicFilter.m */,
+				DD2959FF18799A8F003EC0FD /* FishEyeFilter.h */,
+				DD295A0018799A8F003EC0FD /* FishEyeFilter.m */,
+				DD295A0118799A8F003EC0FD /* GaussianFilter.h */,
+				DD295A0218799A90003EC0FD /* GaussianFilter.m */,
+				DD295A0318799A90003EC0FD /* EdgeFindFilter.h */,
+				DD295A0418799A90003EC0FD /* EdgeFindFilter.m */,
+				DD295A0518799A90003EC0FD /* FaceFindFilter.h */,
+				DD295A0618799A90003EC0FD /* FaceFindFilter.m */,
+				DD2959E218798304003EC0FD /* sax.png */,
+				DD295A0718799A91003EC0FD /* MultiMonitorFilter.h */,
+				DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */,
 				DDCAF5DE1876A80A001196D4 /* Supporting Files */,
 			);
 			path = WeddingCamera;
@@ -144,7 +214,6 @@
 			children = (
 				DDCAF5DF1876A80A001196D4 /* WeddingCamera-Info.plist */,
 				DDCAF5E01876A80A001196D4 /* InfoPlist.strings */,
-				DD2959E218798304003EC0FD /* sax.png */,
 				DDCAF5E31876A80A001196D4 /* main.m */,
 				DDCAF5E51876A80A001196D4 /* WeddingCamera-Prefix.pch */,
 				DD2959E0187982B7003EC0FD /* guter.png */,
@@ -301,6 +370,17 @@
 				DD2959DE187979AD003EC0FD /* ViewController.m in Sources */,
 				DD2959DD187979A8003EC0FD /* AppDelegate.m in Sources */,
 				DDCAF6091876A80A001196D4 /* WeddingCameraTests.m in Sources */,
+				DD295A0918799A92003EC0FD /* ImageFilterBase.m in Sources */,
+				DD295A0A18799A92003EC0FD /* SettingViewController.m in Sources */,
+				DD295A0B18799A92003EC0FD /* BrightnessFilter.m in Sources */,
+				DD295A0C18799A92003EC0FD /* GrayScaleFilter.m in Sources */,
+				DD295A0D18799A92003EC0FD /* SepiaFilter.m in Sources */,
+				DD295A0E18799A92003EC0FD /* MosaicFilter.m in Sources */,
+				DD295A0F18799A92003EC0FD /* FishEyeFilter.m in Sources */,
+				DD295A1018799A92003EC0FD /* GaussianFilter.m in Sources */,
+				DD295A1118799A92003EC0FD /* EdgeFindFilter.m in Sources */,
+				DD295A1218799A92003EC0FD /* FaceFindFilter.m in Sources */,
+				DD295A1318799A92003EC0FD /* MultiMonitorFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

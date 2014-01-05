@@ -14,7 +14,6 @@
 
 @synthesize editImage;
 @synthesize editImageView;
-@synthesize currentStampView;
 @synthesize _isPressStamp;
 
 - (void)viewDidLoad
@@ -22,9 +21,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     editImageView.image = editImage;
-    
-    // スタンプ画像は最初はセットしない
-    currentStampView = NULL;
     
     // 最初はスタンプモードでない
     _isPressStamp = NO;
@@ -45,6 +41,14 @@
 
 - (IBAction)cancelImageAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+// あとでシーン追加して画像選択できるようにする
+// とりあえず固定の画像を画面にはりつける
+- (IBAction)chooseStampAction:(id)sender {
+    UIImageView *currentStampView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 64, 64)];
+    currentStampView.image = [UIImage imageNamed:@"sax.png"];
+    [self.editImageView addSubview:currentStampView];
 }
 
 @end

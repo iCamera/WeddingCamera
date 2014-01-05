@@ -73,7 +73,11 @@
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFm-pe-LhR">
                                 <items>
-                                    <barButtonItem title="stamp" id="wMT-BK-qKb"/>
+                                    <barButtonItem title="stamp" id="wMT-BK-qKb">
+                                        <connections>
+                                            <action selector="chooseStampAction:" destination="X6u-0i-RNw" id="qu3-Fu-ovV"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="filter" id="frl-FJ-27F"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ymx-9x-ghG"/>
                                     <barButtonItem title="save" id="5AJ-GA-epf">

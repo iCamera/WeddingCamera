@@ -17,5 +17,6 @@
 
 - (IBAction)saveImageAction:(id)sender;
 - (IBAction)cancelImageAction:(id)sender;
+- (IBAction)chooseStampAction:(id)sender;
 
 @end
