@@ -16,11 +16,12 @@
 
 @synthesize editImage;
 @synthesize editImageView;
-@synthesize _isPressStamp;
+@synthesize isPressStamp;
 @synthesize currentStampView;
 
 - (void)viewDidLoad
 {
+   
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
@@ -28,10 +29,8 @@
     editImageView.image = editImage;
     
     // 最初はスタンプモードでない
-    _isPressStamp = NO;
+    isPressStamp = NO;
     
-    // スタンプ用のView作っとく
-    //UIImageView *currentStampView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 64, 64)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,16 +50,29 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-// あとでシーン追加して画像選択できるようにする
-// とりあえず固定の画像を画面にはりつける
+// スタンプを選択するページに遷移する
 - (IBAction)chooseStampAction:(id)sender {
     
     StampListViewController * stampListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StampListViewController"];
     [self.navigationController pushViewController:stampListViewController animated:YES];
-    //UIImageView *currentStampView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 64, 64)];
-    //currentStampView.image = [UIImage imageNamed:@"stamp1.png"];
-    //[self.editImageView addSubview:currentStampView];
+
 }
+
+// 画像の上のイベントリスナー
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    // 1.anyObjectメソッドでいずれか1つのタッチを取得
+    // 2.locationViewメソッドで対象となるビューのタッチした座標を取得
+    CGPoint p = [[touches anyObject] locationInView:self.view];
+    float x = p.x;    // X座標
+    float y = p.y;    // Y座標
+
+    NSLog(@"Clicked x:%f y:%f", x, y);
+    if (isPressStamp) {
+        currentStampView.frame = CGRectMake(x, y, currentStampView.image.size.width,currentStampView.image.size.height);
+        [self.editImageView addSubview:self.currentStampView];
+    }
+}
+
 
 // キャプチャをとって画像を保存
 // 領域を指定して画像を切り抜く

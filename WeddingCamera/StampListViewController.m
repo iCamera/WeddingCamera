@@ -7,6 +7,7 @@
 //
 
 #import "StampListViewController.h"
+#import "EditImageController.h"
 
 @interface StampListViewController ()
 
@@ -65,8 +66,6 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    //セクション0には５個
-    //return 5;
     return [self.stamps count];
 }
 
@@ -78,10 +77,6 @@
     cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     imageView.image = [self.stamps objectAtIndex:indexPath.item];
-  
-// デバック用
-//    UILabel *label = (UILabel *)[cell viewWithTag:2];
-//    label.text = [NSString stringWithFormat:@"ラベル%d-%d",indexPath.section,indexPath.row];
 
     return cell;
 }
@@ -90,7 +85,17 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"Clicked %d-%d-%d",indexPath.section,indexPath.row, indexPath.item);
+    //NSLog(@"Clicked %d-%d-%d",indexPath.section,indexPath.row, indexPath.item);
+    EditImageController *editImageController = [self.navigationController.viewControllers objectAtIndex:[self.navigationController.viewControllers count] - 2];
+    
+    // 前の画面にスタンプ画像を渡す
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+    editImageController.currentStampView = imageView;
+    editImageController.isPressStamp = YES;
+    
+    // 前の画面に戻る
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
