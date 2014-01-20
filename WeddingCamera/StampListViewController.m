@@ -91,6 +91,7 @@
     // 前の画面にスタンプ画像を渡す
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+    imageView.image = [self.stamps objectAtIndex:indexPath.item];
     editImageController.currentStampView = imageView;
     editImageController.isPressStamp = YES;
     
