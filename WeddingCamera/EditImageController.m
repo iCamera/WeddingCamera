@@ -17,6 +17,7 @@
 @synthesize editImage;
 @synthesize editImageView;
 @synthesize _isPressStamp;
+@synthesize currentStampView;
 
 - (void)viewDidLoad
 {
@@ -28,6 +29,9 @@
     
     // 最初はスタンプモードでない
     _isPressStamp = NO;
+    
+    // スタンプ用のView作っとく
+    //UIImageView *currentStampView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 64, 64)];
 }
 
 - (void)didReceiveMemoryWarning
