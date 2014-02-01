@@ -68,7 +68,9 @@
 
     NSLog(@"Clicked x:%f y:%f", x, y);
     if (isPressStamp) {
-        currentStampView.frame = CGRectMake(x, y, currentStampView.image.size.width,currentStampView.image.size.height);
+        float stampWidth = currentStampView.image.size.width;
+        float stampHeight = currentStampView.image.size.height;
+        currentStampView.frame = CGRectMake(x - stampWidth, y - stampHeight, stampWidth, stampHeight);
         [self.editImageView addSubview:self.currentStampView];
     }
 }
