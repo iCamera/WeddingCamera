@@ -39,7 +39,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+// TODO: もともとの画像サイズに合わせて保存できるようにする
 - (IBAction)saveImageAction:(id)sender {
     UIImage *saveImage = [self captureImage];
     UIImageWriteToSavedPhotosAlbum(saveImage,NULL,NULL,NULL);
@@ -56,6 +56,10 @@
     StampListViewController * stampListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StampListViewController"];
     [self.navigationController pushViewController:stampListViewController animated:YES];
 
+}
+// フィルターを選択
+- (IBAction)chooseFilterAction:(id)sender {
+    
 }
 
 // 画像の上のイベントリスナー

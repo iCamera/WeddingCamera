@@ -66,7 +66,11 @@
                                             <action selector="chooseStampAction:" destination="X6u-0i-RNw" id="2g4-I4-GUu"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="filter" width="50" style="plain" id="frl-FJ-27F"/>
+                                    <barButtonItem title="filter" width="50" style="plain" id="frl-FJ-27F">
+                                        <connections>
+                                            <action selector="chooseFilterAction:" destination="X6u-0i-RNw" id="TwW-yf-jl3"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ymx-9x-ghG"/>
                                     <barButtonItem style="plain" systemItem="save" id="5AJ-GA-epf">
                                         <connections>

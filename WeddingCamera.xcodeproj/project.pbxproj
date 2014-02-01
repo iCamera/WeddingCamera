@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58050258189D5A250036C06D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E8187990A2003EC0FD /* CoreVideo.framework */; };
+		58050259189D5A300036C06D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E618799096003EC0FD /* CoreMedia.framework */; };
+		5805025A189D5A3D0036C06D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E418799089003EC0FD /* AVFoundation.framework */; };
+		5834CC38189D693B008D20CD /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5834CC37189D693B008D20CD /* opencv2.framework */; };
 		DD2959D618794B0C003EC0FD /* EditImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.m */; };
 		DD2959DD187979A8003EC0FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E71876A80A001196D4 /* AppDelegate.m */; };
 		DD2959DE187979AD003EC0FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5F31876A80A001196D4 /* ViewController.m */; };
@@ -64,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5834CC37189D693B008D20CD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../OpenCV_ios_framework/opencv2.framework; sourceTree = "<group>"; };
 		DD2959D418794B0C003EC0FD /* EditImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditImageController.h; sourceTree = "<group>"; };
 		DD2959D518794B0C003EC0FD /* EditImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditImageController.m; sourceTree = "<group>"; };
 		DD2959E0187982B7003EC0FD /* s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s2.png; sourceTree = "<group>"; };
@@ -129,6 +134,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5834CC38189D693B008D20CD /* opencv2.framework in Frameworks */,
+				5805025A189D5A3D0036C06D /* AVFoundation.framework in Frameworks */,
+				58050259189D5A300036C06D /* CoreMedia.framework in Frameworks */,
+				58050258189D5A250036C06D /* CoreVideo.framework in Frameworks */,
 				DDCAF5D81876A80A001196D4 /* UIKit.framework in Frameworks */,
 				DDCAF5DA1876A80A001196D4 /* Foundation.framework in Frameworks */,
 				DDCAF5DC1876A80A001196D4 /* CoreGraphics.framework in Frameworks */,
@@ -190,6 +199,7 @@
 		DDCAF5D61876A80A001196D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5834CC37189D693B008D20CD /* opencv2.framework */,
 				DDCAF5D71876A80A001196D4 /* UIKit.framework */,
 				DDCAF5D91876A80A001196D4 /* Foundation.framework */,
 				DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */,
@@ -202,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				DD979DB3188D605200CF8C9E /* stamps */,
+				DDCAF5DE1876A80A001196D4 /* Supporting Files */,
 				DDCAF5E61876A80A001196D4 /* AppDelegate.h */,
 				DDCAF5E71876A80A001196D4 /* AppDelegate.m */,
 				DDCAF5EF1876A80A001196D4 /* MainStoryboard.storyboard */,
@@ -235,7 +246,6 @@
 				DD295A0618799A90003EC0FD /* FaceFindFilter.m */,
 				DD295A0718799A91003EC0FD /* MultiMonitorFilter.h */,
 				DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */,
-				DDCAF5DE1876A80A001196D4 /* Supporting Files */,
 			);
 			path = WeddingCamera;
 			sourceTree = "<group>";
@@ -511,11 +521,25 @@
 		DDCAF60D1876A80A001196D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/itourie/syumi/OpenCV_ios_framework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeddingCamera/WeddingCamera-Prefix.pch";
 				INFOPLIST_FILE = "WeddingCamera/WeddingCamera-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/itourie/syumi/OpenCV_ios_framework/OpenCV-iOS/opencv-svn/opencv/3rdparty/lib",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -523,11 +547,24 @@
 		DDCAF60E1876A80A001196D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/itourie/syumi/OpenCV_ios_framework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeddingCamera/WeddingCamera-Prefix.pch";
 				INFOPLIST_FILE = "WeddingCamera/WeddingCamera-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/itourie/syumi/OpenCV_ios_framework/OpenCV-iOS/opencv-svn/opencv/3rdparty/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
