@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation EditImageController {
-    __weak IBOutlet UIImage *editImage;
+    __strong IBOutlet UIImage *editImage;
 }
 
 @synthesize editImage;

@@ -10,7 +10,8 @@
 
 @interface EditImageController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImage *editImage;
+// TODO: strongでOK?
+@property (strong, nonatomic) IBOutlet UIImage *editImage;
 @property (weak, nonatomic) IBOutlet UIImageView *editImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *currentStampView;  // 貼り付け中のスタンプ画像
 @property (nonatomic, assign) BOOL isPressStamp;  // スタンプ貼り付け中かどうか

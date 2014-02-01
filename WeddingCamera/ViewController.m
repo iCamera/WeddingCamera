@@ -41,13 +41,6 @@
     
 }
 
-//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"chooseImage"]) {
-//        EditImageController *editImageViewController = segue.destinationViewController;
-//        editImageViewController.imageView = image;
-//    }
-//}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
