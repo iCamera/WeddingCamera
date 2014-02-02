@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+      __strong NSArray *filters;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+// フィルタ配列を取得するメソッド。
+- (NSArray*)filters;
+
 
 @end

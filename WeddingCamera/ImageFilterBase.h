@@ -6,7 +6,7 @@
 //  Copyright(c) 2011 SOFTBANK Creative Corp., Hidemi Hosoya
 //
 
-#import "opencv/cv.h"
+#import <opencv2/opencv.hpp>
 
 // フィルタ処理を行うクラスの基底クラスの定義
 @interface ImageFilterBase : NSObject {

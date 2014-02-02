@@ -10,46 +10,57 @@
 		58050258189D5A250036C06D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E8187990A2003EC0FD /* CoreVideo.framework */; };
 		58050259189D5A300036C06D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E618799096003EC0FD /* CoreMedia.framework */; };
 		5805025A189D5A3D0036C06D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E418799089003EC0FD /* AVFoundation.framework */; };
-		5834CC38189D693B008D20CD /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5834CC37189D693B008D20CD /* opencv2.framework */; };
-		DD2959D618794B0C003EC0FD /* EditImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.m */; };
-		DD2959DD187979A8003EC0FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E71876A80A001196D4 /* AppDelegate.m */; };
-		DD2959DE187979AD003EC0FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5F31876A80A001196D4 /* ViewController.m */; };
-		DD2959DF187979B8003EC0FD /* EditImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.m */; };
+		5824CDCA189E161C00DAD954 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5824CDC9189E161C00DAD954 /* libc++.dylib */; };
+		5824CDCC189E162B00DAD954 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5824CDCB189E162B00DAD954 /* libstdc++.dylib */; };
+		5824CDCE189E197200DAD954 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5824CDCD189E197200DAD954 /* opencv2.framework */; };
+		5834CC43189DF091008D20CD /* ImageFilterBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F418799A8D003EC0FD /* ImageFilterBase.mm */; };
+		5834CC44189DF09E008D20CD /* BrightnessFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F818799A8E003EC0FD /* BrightnessFilter.mm */; };
+		5834CC45189DF0AB008D20CD /* MultiMonitorFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0818799A92003EC0FD /* MultiMonitorFilter.mm */; };
+		5834CC46189DF0B3008D20CD /* FaceFindFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0618799A90003EC0FD /* FaceFindFilter.mm */; };
+		5834CC47189DF0BB008D20CD /* EdgeFindFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0418799A90003EC0FD /* EdgeFindFilter.mm */; };
+		5834CC48189DF0C2008D20CD /* GaussianFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0218799A90003EC0FD /* GaussianFilter.mm */; };
+		5834CC49189DF0CB008D20CD /* FishEyeFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0018799A8F003EC0FD /* FishEyeFilter.mm */; };
+		5834CC4A189DF0D2008D20CD /* MosaicFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FE18799A8F003EC0FD /* MosaicFilter.mm */; };
+		5834CC4B189DF0D9008D20CD /* SepiaFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FC18799A8E003EC0FD /* SepiaFilter.mm */; };
+		5834CC4C189DF0E1008D20CD /* GrayScaleFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FA18799A8E003EC0FD /* GrayScaleFilter.mm */; };
+		DD2959D618794B0C003EC0FD /* EditImageController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.mm */; };
+		DD2959DD187979A8003EC0FD /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E71876A80A001196D4 /* AppDelegate.mm */; };
+		DD2959DE187979AD003EC0FD /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5F31876A80A001196D4 /* ViewController.mm */; };
+		DD2959DF187979B8003EC0FD /* EditImageController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.mm */; };
 		DD2959E1187982B7003EC0FD /* s2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2959E0187982B7003EC0FD /* s2.png */; };
 		DD2959E318798304003EC0FD /* s1.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2959E218798304003EC0FD /* s1.png */; };
 		DD2959E518799089003EC0FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E418799089003EC0FD /* AVFoundation.framework */; };
 		DD2959E718799096003EC0FD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E618799096003EC0FD /* CoreMedia.framework */; };
 		DD2959E9187990A2003EC0FD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2959E8187990A2003EC0FD /* CoreVideo.framework */; };
 		DD2959EA187990BB003EC0FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */; };
-		DD295A0918799A92003EC0FD /* ImageFilterBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F418799A8D003EC0FD /* ImageFilterBase.m */; };
-		DD295A0A18799A92003EC0FD /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F618799A8D003EC0FD /* SettingViewController.m */; };
-		DD295A0B18799A92003EC0FD /* BrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F818799A8E003EC0FD /* BrightnessFilter.m */; };
-		DD295A0C18799A92003EC0FD /* GrayScaleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FA18799A8E003EC0FD /* GrayScaleFilter.m */; };
-		DD295A0D18799A92003EC0FD /* SepiaFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FC18799A8E003EC0FD /* SepiaFilter.m */; };
-		DD295A0E18799A92003EC0FD /* MosaicFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FE18799A8F003EC0FD /* MosaicFilter.m */; };
-		DD295A0F18799A92003EC0FD /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0018799A8F003EC0FD /* FishEyeFilter.m */; };
-		DD295A1018799A92003EC0FD /* GaussianFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0218799A90003EC0FD /* GaussianFilter.m */; };
-		DD295A1118799A92003EC0FD /* EdgeFindFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0418799A90003EC0FD /* EdgeFindFilter.m */; };
-		DD295A1218799A92003EC0FD /* FaceFindFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0618799A90003EC0FD /* FaceFindFilter.m */; };
-		DD295A1318799A92003EC0FD /* MultiMonitorFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */; };
+		DD295A0918799A92003EC0FD /* ImageFilterBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F418799A8D003EC0FD /* ImageFilterBase.mm */; };
+		DD295A0B18799A92003EC0FD /* BrightnessFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959F818799A8E003EC0FD /* BrightnessFilter.mm */; };
+		DD295A0C18799A92003EC0FD /* GrayScaleFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FA18799A8E003EC0FD /* GrayScaleFilter.mm */; };
+		DD295A0D18799A92003EC0FD /* SepiaFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FC18799A8E003EC0FD /* SepiaFilter.mm */; };
+		DD295A0E18799A92003EC0FD /* MosaicFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FE18799A8F003EC0FD /* MosaicFilter.mm */; };
+		DD295A0F18799A92003EC0FD /* FishEyeFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0018799A8F003EC0FD /* FishEyeFilter.mm */; };
+		DD295A1018799A92003EC0FD /* GaussianFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0218799A90003EC0FD /* GaussianFilter.mm */; };
+		DD295A1118799A92003EC0FD /* EdgeFindFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0418799A90003EC0FD /* EdgeFindFilter.mm */; };
+		DD295A1218799A92003EC0FD /* FaceFindFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0618799A90003EC0FD /* FaceFindFilter.mm */; };
+		DD295A1318799A92003EC0FD /* MultiMonitorFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0818799A92003EC0FD /* MultiMonitorFilter.mm */; };
 		DD295A151879AC0D003EC0FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD295A141879AC0D003EC0FD /* QuartzCore.framework */; };
-		DD295A1E1879C385003EC0FD /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A1D1879C384003EC0FD /* CollectionCell.m */; };
-		DD979DAE188D4D6400CF8C9E /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD295A1D1879C384003EC0FD /* CollectionCell.m */; };
-		DD979DB1188D4E9B00CF8C9E /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD979DB0188D4E9B00CF8C9E /* StampListViewController.m */; };
-		DD979DB2188D4ED500CF8C9E /* StampListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD979DB0188D4E9B00CF8C9E /* StampListViewController.m */; };
+		DD295A1E1879C385003EC0FD /* CollectionCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A1D1879C384003EC0FD /* CollectionCell.mm */; };
+		DD979DAE188D4D6400CF8C9E /* CollectionCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A1D1879C384003EC0FD /* CollectionCell.mm */; };
+		DD979DB1188D4E9B00CF8C9E /* StampListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */; };
+		DD979DB2188D4ED500CF8C9E /* StampListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */; };
 		DD979DB6188D69B500CF8C9E /* s3.png in Resources */ = {isa = PBXBuildFile; fileRef = DD979DB4188D69B500CF8C9E /* s3.png */; };
 		DD979DB7188D69B500CF8C9E /* s4.png in Resources */ = {isa = PBXBuildFile; fileRef = DD979DB5188D69B500CF8C9E /* s4.png */; };
 		DDCAF5D81876A80A001196D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D71876A80A001196D4 /* UIKit.framework */; };
 		DDCAF5DA1876A80A001196D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D91876A80A001196D4 /* Foundation.framework */; };
 		DDCAF5DC1876A80A001196D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */; };
 		DDCAF5E21876A80A001196D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDCAF5E01876A80A001196D4 /* InfoPlist.strings */; };
-		DDCAF5E41876A80A001196D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E31876A80A001196D4 /* main.m */; };
-		DDCAF5E81876A80A001196D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E71876A80A001196D4 /* AppDelegate.m */; };
+		DDCAF5E41876A80A001196D4 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E31876A80A001196D4 /* main.mm */; };
+		DDCAF5E81876A80A001196D4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E71876A80A001196D4 /* AppDelegate.mm */; };
 		DDCAF5EA1876A80A001196D4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCAF5E91876A80A001196D4 /* Default.png */; };
 		DDCAF5EC1876A80A001196D4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCAF5EB1876A80A001196D4 /* Default@2x.png */; };
 		DDCAF5EE1876A80A001196D4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCAF5ED1876A80A001196D4 /* Default-568h@2x.png */; };
 		DDCAF5F11876A80A001196D4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCAF5EF1876A80A001196D4 /* MainStoryboard.storyboard */; };
-		DDCAF5F41876A80A001196D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5F31876A80A001196D4 /* ViewController.m */; };
+		DDCAF5F41876A80A001196D4 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5F31876A80A001196D4 /* ViewController.mm */; };
 		DDCAF5FC1876A80A001196D4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5FB1876A80A001196D4 /* SenTestingKit.framework */; };
 		DDCAF5FD1876A80A001196D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D71876A80A001196D4 /* UIKit.framework */; };
 		DDCAF5FE1876A80A001196D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D91876A80A001196D4 /* Foundation.framework */; };
@@ -68,41 +79,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5834CC37189D693B008D20CD /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../OpenCV_ios_framework/opencv2.framework; sourceTree = "<group>"; };
+		5824CDC9189E161C00DAD954 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		5824CDCB189E162B00DAD954 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		5824CDCD189E197200DAD954 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		DD2959D418794B0C003EC0FD /* EditImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditImageController.h; sourceTree = "<group>"; };
-		DD2959D518794B0C003EC0FD /* EditImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditImageController.m; sourceTree = "<group>"; };
+		DD2959D518794B0C003EC0FD /* EditImageController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditImageController.mm; sourceTree = "<group>"; };
 		DD2959E0187982B7003EC0FD /* s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s2.png; sourceTree = "<group>"; };
 		DD2959E218798304003EC0FD /* s1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s1.png; sourceTree = "<group>"; };
 		DD2959E418799089003EC0FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DD2959E618799096003EC0FD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DD2959E8187990A2003EC0FD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		DD2959F318799A8D003EC0FD /* ImageFilterBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilterBase.h; sourceTree = "<group>"; };
-		DD2959F418799A8D003EC0FD /* ImageFilterBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilterBase.m; sourceTree = "<group>"; };
-		DD2959F518799A8D003EC0FD /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		DD2959F618799A8D003EC0FD /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		DD2959F418799A8D003EC0FD /* ImageFilterBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageFilterBase.mm; sourceTree = "<group>"; };
 		DD2959F718799A8E003EC0FD /* BrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessFilter.h; sourceTree = "<group>"; };
-		DD2959F818799A8E003EC0FD /* BrightnessFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrightnessFilter.m; sourceTree = "<group>"; };
+		DD2959F818799A8E003EC0FD /* BrightnessFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BrightnessFilter.mm; sourceTree = "<group>"; };
 		DD2959F918799A8E003EC0FD /* GrayScaleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayScaleFilter.h; sourceTree = "<group>"; };
-		DD2959FA18799A8E003EC0FD /* GrayScaleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayScaleFilter.m; sourceTree = "<group>"; };
+		DD2959FA18799A8E003EC0FD /* GrayScaleFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrayScaleFilter.mm; sourceTree = "<group>"; };
 		DD2959FB18799A8E003EC0FD /* SepiaFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SepiaFilter.h; sourceTree = "<group>"; };
-		DD2959FC18799A8E003EC0FD /* SepiaFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SepiaFilter.m; sourceTree = "<group>"; };
+		DD2959FC18799A8E003EC0FD /* SepiaFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SepiaFilter.mm; sourceTree = "<group>"; };
 		DD2959FD18799A8E003EC0FD /* MosaicFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicFilter.h; sourceTree = "<group>"; };
-		DD2959FE18799A8F003EC0FD /* MosaicFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicFilter.m; sourceTree = "<group>"; };
+		DD2959FE18799A8F003EC0FD /* MosaicFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MosaicFilter.mm; sourceTree = "<group>"; };
 		DD2959FF18799A8F003EC0FD /* FishEyeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
-		DD295A0018799A8F003EC0FD /* FishEyeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
+		DD295A0018799A8F003EC0FD /* FishEyeFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FishEyeFilter.mm; sourceTree = "<group>"; };
 		DD295A0118799A8F003EC0FD /* GaussianFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianFilter.h; sourceTree = "<group>"; };
-		DD295A0218799A90003EC0FD /* GaussianFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussianFilter.m; sourceTree = "<group>"; };
+		DD295A0218799A90003EC0FD /* GaussianFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GaussianFilter.mm; sourceTree = "<group>"; };
 		DD295A0318799A90003EC0FD /* EdgeFindFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeFindFilter.h; sourceTree = "<group>"; };
-		DD295A0418799A90003EC0FD /* EdgeFindFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EdgeFindFilter.m; sourceTree = "<group>"; };
+		DD295A0418799A90003EC0FD /* EdgeFindFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EdgeFindFilter.mm; sourceTree = "<group>"; };
 		DD295A0518799A90003EC0FD /* FaceFindFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceFindFilter.h; sourceTree = "<group>"; };
-		DD295A0618799A90003EC0FD /* FaceFindFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceFindFilter.m; sourceTree = "<group>"; };
+		DD295A0618799A90003EC0FD /* FaceFindFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceFindFilter.mm; sourceTree = "<group>"; };
 		DD295A0718799A91003EC0FD /* MultiMonitorFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiMonitorFilter.h; sourceTree = "<group>"; };
-		DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiMonitorFilter.m; sourceTree = "<group>"; };
+		DD295A0818799A92003EC0FD /* MultiMonitorFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MultiMonitorFilter.mm; sourceTree = "<group>"; };
 		DD295A141879AC0D003EC0FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DD295A1C1879C384003EC0FD /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
-		DD295A1D1879C384003EC0FD /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
+		DD295A1D1879C384003EC0FD /* CollectionCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CollectionCell.mm; sourceTree = "<group>"; };
 		DD979DAF188D4E9B00CF8C9E /* StampListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampListViewController.h; sourceTree = "<group>"; };
-		DD979DB0188D4E9B00CF8C9E /* StampListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StampListViewController.m; sourceTree = "<group>"; };
+		DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StampListViewController.mm; sourceTree = "<group>"; };
 		DD979DB4188D69B500CF8C9E /* s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s3.png; sourceTree = "<group>"; };
 		DD979DB5188D69B500CF8C9E /* s4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s4.png; sourceTree = "<group>"; };
 		DDCAF5D31876A80A001196D4 /* WeddingCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,16 +122,16 @@
 		DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DDCAF5DF1876A80A001196D4 /* WeddingCamera-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeddingCamera-Info.plist"; sourceTree = "<group>"; };
 		DDCAF5E11876A80A001196D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DDCAF5E31876A80A001196D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDCAF5E31876A80A001196D4 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		DDCAF5E51876A80A001196D4 /* WeddingCamera-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeddingCamera-Prefix.pch"; sourceTree = "<group>"; };
 		DDCAF5E61876A80A001196D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		DDCAF5E71876A80A001196D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DDCAF5E71876A80A001196D4 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		DDCAF5E91876A80A001196D4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DDCAF5EB1876A80A001196D4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DDCAF5ED1876A80A001196D4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DDCAF5F01876A80A001196D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DDCAF5F21876A80A001196D4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DDCAF5F31876A80A001196D4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DDCAF5F31876A80A001196D4 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		DDCAF5FA1876A80A001196D4 /* WeddingCameraTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeddingCameraTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCAF5FB1876A80A001196D4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		DDCAF6031876A80A001196D4 /* WeddingCameraTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeddingCameraTests-Info.plist"; sourceTree = "<group>"; };
@@ -134,8 +145,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5834CC38189D693B008D20CD /* opencv2.framework in Frameworks */,
+				5824CDCC189E162B00DAD954 /* libstdc++.dylib in Frameworks */,
+				5824CDCA189E161C00DAD954 /* libc++.dylib in Frameworks */,
 				5805025A189D5A3D0036C06D /* AVFoundation.framework in Frameworks */,
+				5824CDCE189E197200DAD954 /* opencv2.framework in Frameworks */,
 				58050259189D5A300036C06D /* CoreMedia.framework in Frameworks */,
 				58050258189D5A250036C06D /* CoreVideo.framework in Frameworks */,
 				DDCAF5D81876A80A001196D4 /* UIKit.framework in Frameworks */,
@@ -162,6 +175,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5834CC39189D6E43008D20CD /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				DD2959F318799A8D003EC0FD /* ImageFilterBase.h */,
+				DD2959F418799A8D003EC0FD /* ImageFilterBase.mm */,
+				DD2959F718799A8E003EC0FD /* BrightnessFilter.h */,
+				DD2959F818799A8E003EC0FD /* BrightnessFilter.mm */,
+				DD2959F918799A8E003EC0FD /* GrayScaleFilter.h */,
+				DD2959FA18799A8E003EC0FD /* GrayScaleFilter.mm */,
+				DD2959FB18799A8E003EC0FD /* SepiaFilter.h */,
+				DD2959FC18799A8E003EC0FD /* SepiaFilter.mm */,
+				DD2959FD18799A8E003EC0FD /* MosaicFilter.h */,
+				DD2959FE18799A8F003EC0FD /* MosaicFilter.mm */,
+				DD2959FF18799A8F003EC0FD /* FishEyeFilter.h */,
+				DD295A0018799A8F003EC0FD /* FishEyeFilter.mm */,
+				DD295A0118799A8F003EC0FD /* GaussianFilter.h */,
+				DD295A0218799A90003EC0FD /* GaussianFilter.mm */,
+				DD295A0318799A90003EC0FD /* EdgeFindFilter.h */,
+				DD295A0418799A90003EC0FD /* EdgeFindFilter.mm */,
+				DD295A0518799A90003EC0FD /* FaceFindFilter.h */,
+				DD295A0618799A90003EC0FD /* FaceFindFilter.mm */,
+				DD295A0718799A91003EC0FD /* MultiMonitorFilter.h */,
+				DD295A0818799A92003EC0FD /* MultiMonitorFilter.mm */,
+			);
+			name = filters;
+			sourceTree = "<group>";
+		};
 		DD979DB3188D605200CF8C9E /* stamps */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +239,9 @@
 		DDCAF5D61876A80A001196D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5834CC37189D693B008D20CD /* opencv2.framework */,
+				5824CDCD189E197200DAD954 /* opencv2.framework */,
+				5824CDCB189E162B00DAD954 /* libstdc++.dylib */,
+				5824CDC9189E161C00DAD954 /* libc++.dylib */,
 				DDCAF5D71876A80A001196D4 /* UIKit.framework */,
 				DDCAF5D91876A80A001196D4 /* Foundation.framework */,
 				DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */,
@@ -214,38 +256,17 @@
 				DD979DB3188D605200CF8C9E /* stamps */,
 				DDCAF5DE1876A80A001196D4 /* Supporting Files */,
 				DDCAF5E61876A80A001196D4 /* AppDelegate.h */,
-				DDCAF5E71876A80A001196D4 /* AppDelegate.m */,
+				DDCAF5E71876A80A001196D4 /* AppDelegate.mm */,
 				DDCAF5EF1876A80A001196D4 /* MainStoryboard.storyboard */,
 				DDCAF5F21876A80A001196D4 /* ViewController.h */,
-				DDCAF5F31876A80A001196D4 /* ViewController.m */,
+				DDCAF5F31876A80A001196D4 /* ViewController.mm */,
 				DD2959D418794B0C003EC0FD /* EditImageController.h */,
-				DD2959D518794B0C003EC0FD /* EditImageController.m */,
+				DD2959D518794B0C003EC0FD /* EditImageController.mm */,
 				DD979DAF188D4E9B00CF8C9E /* StampListViewController.h */,
-				DD979DB0188D4E9B00CF8C9E /* StampListViewController.m */,
+				DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */,
 				DD295A1C1879C384003EC0FD /* CollectionCell.h */,
-				DD295A1D1879C384003EC0FD /* CollectionCell.m */,
-				DD2959F318799A8D003EC0FD /* ImageFilterBase.h */,
-				DD2959F418799A8D003EC0FD /* ImageFilterBase.m */,
-				DD2959F518799A8D003EC0FD /* SettingViewController.h */,
-				DD2959F618799A8D003EC0FD /* SettingViewController.m */,
-				DD2959F718799A8E003EC0FD /* BrightnessFilter.h */,
-				DD2959F818799A8E003EC0FD /* BrightnessFilter.m */,
-				DD2959F918799A8E003EC0FD /* GrayScaleFilter.h */,
-				DD2959FA18799A8E003EC0FD /* GrayScaleFilter.m */,
-				DD2959FB18799A8E003EC0FD /* SepiaFilter.h */,
-				DD2959FC18799A8E003EC0FD /* SepiaFilter.m */,
-				DD2959FD18799A8E003EC0FD /* MosaicFilter.h */,
-				DD2959FE18799A8F003EC0FD /* MosaicFilter.m */,
-				DD2959FF18799A8F003EC0FD /* FishEyeFilter.h */,
-				DD295A0018799A8F003EC0FD /* FishEyeFilter.m */,
-				DD295A0118799A8F003EC0FD /* GaussianFilter.h */,
-				DD295A0218799A90003EC0FD /* GaussianFilter.m */,
-				DD295A0318799A90003EC0FD /* EdgeFindFilter.h */,
-				DD295A0418799A90003EC0FD /* EdgeFindFilter.m */,
-				DD295A0518799A90003EC0FD /* FaceFindFilter.h */,
-				DD295A0618799A90003EC0FD /* FaceFindFilter.m */,
-				DD295A0718799A91003EC0FD /* MultiMonitorFilter.h */,
-				DD295A0818799A92003EC0FD /* MultiMonitorFilter.m */,
+				DD295A1D1879C384003EC0FD /* CollectionCell.mm */,
+				5834CC39189D6E43008D20CD /* filters */,
 			);
 			path = WeddingCamera;
 			sourceTree = "<group>";
@@ -255,7 +276,7 @@
 			children = (
 				DDCAF5DF1876A80A001196D4 /* WeddingCamera-Info.plist */,
 				DDCAF5E01876A80A001196D4 /* InfoPlist.strings */,
-				DDCAF5E31876A80A001196D4 /* main.m */,
+				DDCAF5E31876A80A001196D4 /* main.mm */,
 				DDCAF5E51876A80A001196D4 /* WeddingCamera-Prefix.pch */,
 				DDCAF5E91876A80A001196D4 /* Default.png */,
 				DDCAF5EB1876A80A001196D4 /* Default@2x.png */,
@@ -397,12 +418,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDCAF5E41876A80A001196D4 /* main.m in Sources */,
-				DDCAF5E81876A80A001196D4 /* AppDelegate.m in Sources */,
-				DDCAF5F41876A80A001196D4 /* ViewController.m in Sources */,
-				DD2959D618794B0C003EC0FD /* EditImageController.m in Sources */,
-				DD295A1E1879C385003EC0FD /* CollectionCell.m in Sources */,
-				DD979DB1188D4E9B00CF8C9E /* StampListViewController.m in Sources */,
+				5834CC4C189DF0E1008D20CD /* GrayScaleFilter.mm in Sources */,
+				5834CC4B189DF0D9008D20CD /* SepiaFilter.mm in Sources */,
+				5834CC4A189DF0D2008D20CD /* MosaicFilter.mm in Sources */,
+				5834CC49189DF0CB008D20CD /* FishEyeFilter.mm in Sources */,
+				5834CC48189DF0C2008D20CD /* GaussianFilter.mm in Sources */,
+				5834CC47189DF0BB008D20CD /* EdgeFindFilter.mm in Sources */,
+				5834CC46189DF0B3008D20CD /* FaceFindFilter.mm in Sources */,
+				5834CC45189DF0AB008D20CD /* MultiMonitorFilter.mm in Sources */,
+				5834CC44189DF09E008D20CD /* BrightnessFilter.mm in Sources */,
+				5834CC43189DF091008D20CD /* ImageFilterBase.mm in Sources */,
+				DDCAF5E41876A80A001196D4 /* main.mm in Sources */,
+				DDCAF5E81876A80A001196D4 /* AppDelegate.mm in Sources */,
+				DDCAF5F41876A80A001196D4 /* ViewController.mm in Sources */,
+				DD2959D618794B0C003EC0FD /* EditImageController.mm in Sources */,
+				DD295A1E1879C385003EC0FD /* CollectionCell.mm in Sources */,
+				DD979DB1188D4E9B00CF8C9E /* StampListViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,23 +441,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD979DB2188D4ED500CF8C9E /* StampListViewController.m in Sources */,
-				DD979DAE188D4D6400CF8C9E /* CollectionCell.m in Sources */,
-				DD2959DF187979B8003EC0FD /* EditImageController.m in Sources */,
-				DD2959DE187979AD003EC0FD /* ViewController.m in Sources */,
-				DD2959DD187979A8003EC0FD /* AppDelegate.m in Sources */,
+				DD979DB2188D4ED500CF8C9E /* StampListViewController.mm in Sources */,
+				DD979DAE188D4D6400CF8C9E /* CollectionCell.mm in Sources */,
+				DD2959DF187979B8003EC0FD /* EditImageController.mm in Sources */,
+				DD2959DE187979AD003EC0FD /* ViewController.mm in Sources */,
+				DD2959DD187979A8003EC0FD /* AppDelegate.mm in Sources */,
 				DDCAF6091876A80A001196D4 /* WeddingCameraTests.m in Sources */,
-				DD295A0918799A92003EC0FD /* ImageFilterBase.m in Sources */,
-				DD295A0A18799A92003EC0FD /* SettingViewController.m in Sources */,
-				DD295A0B18799A92003EC0FD /* BrightnessFilter.m in Sources */,
-				DD295A0C18799A92003EC0FD /* GrayScaleFilter.m in Sources */,
-				DD295A0D18799A92003EC0FD /* SepiaFilter.m in Sources */,
-				DD295A0E18799A92003EC0FD /* MosaicFilter.m in Sources */,
-				DD295A0F18799A92003EC0FD /* FishEyeFilter.m in Sources */,
-				DD295A1018799A92003EC0FD /* GaussianFilter.m in Sources */,
-				DD295A1118799A92003EC0FD /* EdgeFindFilter.m in Sources */,
-				DD295A1218799A92003EC0FD /* FaceFindFilter.m in Sources */,
-				DD295A1318799A92003EC0FD /* MultiMonitorFilter.m in Sources */,
+				DD295A0918799A92003EC0FD /* ImageFilterBase.mm in Sources */,
+				DD295A0B18799A92003EC0FD /* BrightnessFilter.mm in Sources */,
+				DD295A0C18799A92003EC0FD /* GrayScaleFilter.mm in Sources */,
+				DD295A0D18799A92003EC0FD /* SepiaFilter.mm in Sources */,
+				DD295A0E18799A92003EC0FD /* MosaicFilter.mm in Sources */,
+				DD295A0F18799A92003EC0FD /* FishEyeFilter.mm in Sources */,
+				DD295A1018799A92003EC0FD /* GaussianFilter.mm in Sources */,
+				DD295A1118799A92003EC0FD /* EdgeFindFilter.mm in Sources */,
+				DD295A1218799A92003EC0FD /* FaceFindFilter.mm in Sources */,
+				DD295A1318799A92003EC0FD /* MultiMonitorFilter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,25 +551,23 @@
 		DDCAF60D1876A80A001196D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/itourie/syumi/OpenCV_ios_framework,
+					/Users/itourie/syumi/WeddingCamera,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeddingCamera/WeddingCamera-Prefix.pch";
 				INFOPLIST_FILE = "WeddingCamera/WeddingCamera-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/itourie/syumi/OpenCV_ios_framework/OpenCV-iOS/opencv-svn/opencv/3rdparty/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -547,24 +575,22 @@
 		DDCAF60E1876A80A001196D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/itourie/syumi/OpenCV_ios_framework,
+					/Users/itourie/syumi/WeddingCamera,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeddingCamera/WeddingCamera-Prefix.pch";
 				INFOPLIST_FILE = "WeddingCamera/WeddingCamera-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/itourie/syumi/OpenCV_ios_framework/OpenCV-iOS/opencv-svn/opencv/3rdparty/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
