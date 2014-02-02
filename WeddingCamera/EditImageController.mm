@@ -62,12 +62,12 @@
 }
 // フィルターを選択
 - (IBAction)chooseFilterAction:(id)sender {
-    // TODO: とりあえずフィルタ実行しちゃう
     CGImageRef inImage = editImage.CGImage;
     
     if (filter == nil) {
-        // 未指定の場合は、一件目のフィルタを使用。
-        self.filter = [ ((AppDelegate*)[UIApplication sharedApplication].delegate).filters objectAtIndex:0];
+        // TODO: とりあえずフィルタ実行しちゃう
+        self.filter = [ ((AppDelegate*)[UIApplication sharedApplication].delegate).filters objectAtIndex:2];
+        self.filter.currentValue = [NSNumber numberWithFloat:200];
     }
     
     CGImageRef filteredImage;
@@ -78,7 +78,14 @@
         filteredImage = CGImageRetain(inImage);
     }
 
+    // CGImageをUIImageに変換
+    UIImage* newImage = [UIImage imageWithCGImage:filteredImage];
+    CGImageRelease(filteredImage);
+    CGImageRelease(inImage);
     
+    // メモリリークするっぽい。。。
+    self.editImage = newImage;
+        
 }
 
 // 画像の上のイベントリスナー
