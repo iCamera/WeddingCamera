@@ -21,5 +21,6 @@
 - (IBAction)saveImageAction:(id)sender;
 - (IBAction)cancelImageAction:(id)sender;
 - (IBAction)chooseStampAction:(id)sender;
+- (IBAction)chooseFilterAction:(id)sender;
 
 @end

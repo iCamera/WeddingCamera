@@ -67,7 +67,7 @@
     if (filter == nil) {
         // TODO: とりあえずフィルタ実行しちゃう
         self.filter = [ ((AppDelegate*)[UIApplication sharedApplication].delegate).filters objectAtIndex:2];
-        self.filter.currentValue = [NSNumber numberWithFloat:200];
+        //self.filter.currentValue = [NSNumber numberWithFloat:0];
     }
     
     CGImageRef filteredImage;
@@ -80,12 +80,11 @@
 
     // CGImageをUIImageに変換
     UIImage* newImage = [UIImage imageWithCGImage:filteredImage];
+    editImageView.image = newImage;
+    
     CGImageRelease(filteredImage);
     CGImageRelease(inImage);
     
-    // メモリリークするっぽい。。。
-    self.editImage = newImage;
-        
 }
 
 // 画像の上のイベントリスナー
