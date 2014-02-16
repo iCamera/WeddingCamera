@@ -50,7 +50,7 @@
 - (void)loadStamps {
     
     NSMutableArray *stampImages = [NSMutableArray array];
-    for (int i = 1; i <= 4; i++) {
+    for (int i = 1; i <= 14; i++) {
         NSString *filename = [NSString stringWithFormat:@"s%d.png", i];
         [stampImages addObject:[UIImage imageNamed:filename]];
     }

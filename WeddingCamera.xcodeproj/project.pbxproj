@@ -23,6 +23,16 @@
 		5834CC4A189DF0D2008D20CD /* MosaicFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FE18799A8F003EC0FD /* MosaicFilter.mm */; };
 		5834CC4B189DF0D9008D20CD /* SepiaFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FC18799A8E003EC0FD /* SepiaFilter.mm */; };
 		5834CC4C189DF0E1008D20CD /* GrayScaleFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959FA18799A8E003EC0FD /* GrayScaleFilter.mm */; };
+		5836FE2918AD145C0012C54C /* s5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE1F18AD145C0012C54C /* s5.png */; };
+		5836FE2A18AD145C0012C54C /* s6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2018AD145C0012C54C /* s6.png */; };
+		5836FE2B18AD145C0012C54C /* s7.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2118AD145C0012C54C /* s7.png */; };
+		5836FE2C18AD145C0012C54C /* s8.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2218AD145C0012C54C /* s8.png */; };
+		5836FE2D18AD145C0012C54C /* s9.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2318AD145C0012C54C /* s9.png */; };
+		5836FE2E18AD145C0012C54C /* s10.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2418AD145C0012C54C /* s10.png */; };
+		5836FE2F18AD145C0012C54C /* s11.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2518AD145C0012C54C /* s11.png */; };
+		5836FE3018AD145C0012C54C /* s12.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2618AD145C0012C54C /* s12.png */; };
+		5836FE3118AD145C0012C54C /* s13.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2718AD145C0012C54C /* s13.png */; };
+		5836FE3218AD145C0012C54C /* s14.png in Resources */ = {isa = PBXBuildFile; fileRef = 5836FE2818AD145C0012C54C /* s14.png */; };
 		DD2959D618794B0C003EC0FD /* EditImageController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD2959D518794B0C003EC0FD /* EditImageController.mm */; };
 		DD2959DD187979A8003EC0FD /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5E71876A80A001196D4 /* AppDelegate.mm */; };
 		DD2959DE187979AD003EC0FD /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDCAF5F31876A80A001196D4 /* ViewController.mm */; };
@@ -82,6 +92,16 @@
 		5824CDC9189E161C00DAD954 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		5824CDCB189E162B00DAD954 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		5824CDCD189E197200DAD954 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		5836FE1F18AD145C0012C54C /* s5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s5.png; sourceTree = "<group>"; };
+		5836FE2018AD145C0012C54C /* s6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s6.png; sourceTree = "<group>"; };
+		5836FE2118AD145C0012C54C /* s7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s7.png; sourceTree = "<group>"; };
+		5836FE2218AD145C0012C54C /* s8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s8.png; sourceTree = "<group>"; };
+		5836FE2318AD145C0012C54C /* s9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s9.png; sourceTree = "<group>"; };
+		5836FE2418AD145C0012C54C /* s10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s10.png; sourceTree = "<group>"; };
+		5836FE2518AD145C0012C54C /* s11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s11.png; sourceTree = "<group>"; };
+		5836FE2618AD145C0012C54C /* s12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s12.png; sourceTree = "<group>"; };
+		5836FE2718AD145C0012C54C /* s13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s13.png; sourceTree = "<group>"; };
+		5836FE2818AD145C0012C54C /* s14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s14.png; sourceTree = "<group>"; };
 		DD2959D418794B0C003EC0FD /* EditImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditImageController.h; sourceTree = "<group>"; };
 		DD2959D518794B0C003EC0FD /* EditImageController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditImageController.mm; sourceTree = "<group>"; };
 		DD2959E0187982B7003EC0FD /* s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s2.png; sourceTree = "<group>"; };
@@ -207,6 +227,16 @@
 			children = (
 				DD2959E218798304003EC0FD /* s1.png */,
 				DD979DB4188D69B500CF8C9E /* s3.png */,
+				5836FE1F18AD145C0012C54C /* s5.png */,
+				5836FE2018AD145C0012C54C /* s6.png */,
+				5836FE2118AD145C0012C54C /* s7.png */,
+				5836FE2218AD145C0012C54C /* s8.png */,
+				5836FE2318AD145C0012C54C /* s9.png */,
+				5836FE2418AD145C0012C54C /* s10.png */,
+				5836FE2518AD145C0012C54C /* s11.png */,
+				5836FE2618AD145C0012C54C /* s12.png */,
+				5836FE2718AD145C0012C54C /* s13.png */,
+				5836FE2818AD145C0012C54C /* s14.png */,
 				DD979DB5188D69B500CF8C9E /* s4.png */,
 				DD2959E0187982B7003EC0FD /* s2.png */,
 			);
@@ -351,6 +381,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Rie Ito";
+				TargetAttributes = {
+					DDCAF5D21876A80A001196D4 = {
+						DevelopmentTeam = H8FX5H7XWQ;
+					};
+				};
 			};
 			buildConfigurationList = DDCAF5CD1876A80A001196D4 /* Build configuration list for PBXProject "WeddingCamera" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -375,15 +410,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5836FE2E18AD145C0012C54C /* s10.png in Resources */,
+				5836FE2C18AD145C0012C54C /* s8.png in Resources */,
 				DDCAF5E21876A80A001196D4 /* InfoPlist.strings in Resources */,
 				DDCAF5EA1876A80A001196D4 /* Default.png in Resources */,
 				DDCAF5EC1876A80A001196D4 /* Default@2x.png in Resources */,
 				DDCAF5EE1876A80A001196D4 /* Default-568h@2x.png in Resources */,
 				DDCAF5F11876A80A001196D4 /* MainStoryboard.storyboard in Resources */,
+				5836FE2918AD145C0012C54C /* s5.png in Resources */,
+				5836FE3018AD145C0012C54C /* s12.png in Resources */,
 				DD2959E1187982B7003EC0FD /* s2.png in Resources */,
+				5836FE2B18AD145C0012C54C /* s7.png in Resources */,
+				5836FE2A18AD145C0012C54C /* s6.png in Resources */,
 				DD2959E318798304003EC0FD /* s1.png in Resources */,
+				5836FE3218AD145C0012C54C /* s14.png in Resources */,
 				DD979DB6188D69B500CF8C9E /* s3.png in Resources */,
 				DD979DB7188D69B500CF8C9E /* s4.png in Resources */,
+				5836FE3118AD145C0012C54C /* s13.png in Resources */,
+				5836FE2D18AD145C0012C54C /* s9.png in Resources */,
+				5836FE2F18AD145C0012C54C /* s11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +597,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rie Ito (AY7T33R5L4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rie Ito (AY7T33R5L4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/itourie/syumi/WeddingCamera,
@@ -567,6 +614,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -576,6 +624,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rie Ito (AY7T33R5L4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rie Ito (AY7T33R5L4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/itourie/syumi/WeddingCamera,
@@ -590,6 +640,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
