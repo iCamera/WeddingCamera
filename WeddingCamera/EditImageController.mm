@@ -17,6 +17,7 @@
 
 @synthesize editImage;
 @synthesize editImageView;
+@synthesize dummyView;
 @synthesize isPressStamp;
 @synthesize currentStampView;
 @synthesize filter;
@@ -30,6 +31,8 @@
 
     // 選択した画像を設定
     editImageView.image = editImage;
+    
+    dummyView.hidden = TRUE;
     
     // 最初はスタンプモードでない
     isPressStamp = NO;
@@ -53,13 +56,30 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-// スタンプを選択するページに遷移する
+// スタンプを選択するViewをaddする
 - (IBAction)chooseStampAction:(id)sender {
     
     StampListViewController * stampListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StampListViewController"];
-    [self.navigationController pushViewController:stampListViewController animated:YES];
+    [stampListViewController.view setFrame: CGRectMake(0, 436, 320, 200)]; // TODO
+    [self addChildViewController:stampListViewController];
+    [stampListViewController didMoveToParentViewController:self];
+    [self.view addSubview:stampListViewController.view];
+    
+    UIView *stampListView = stampListViewController.view;
+    [UIView
+        animateWithDuration:0.3
+        animations:^{
+            CGFloat originY = dummyView.frame.origin.y;
+            CGRect frame = stampListView.frame;
+            frame.origin.y = originY;
+            stampListView.frame = frame;
+        }
+        completion:^(BOOL finished){
+        
+    }];
 
 }
+
 // フィルターを選択
 - (IBAction)chooseFilterAction:(id)sender {
     CGImageRef inImage = editImage.CGImage;
@@ -97,8 +117,8 @@
 
     NSLog(@"Clicked x:%f y:%f", x, y);
     if (isPressStamp) {
-        float stampWidth = currentStampView.image.size.width;
-        float stampHeight = currentStampView.image.size.height;
+        float stampWidth = 200;
+        float stampHeight = 200;
         currentStampView.frame = CGRectMake(x - stampWidth, y - stampHeight, stampWidth, stampHeight);
         [self.editImageView addSubview:self.currentStampView];
     }

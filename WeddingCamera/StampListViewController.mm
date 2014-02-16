@@ -17,6 +17,7 @@
 
 @synthesize stampListView;
 @synthesize stamps;
+@synthesize choseStamps;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +39,9 @@
     // stamp画像読み込み
     [self loadStamps];
     
+    // 複数選択可
+    self.stampListView.allowsMultipleSelection = YES;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +54,7 @@
 - (void)loadStamps {
     
     NSMutableArray *stampImages = [NSMutableArray array];
-    for (int i = 1; i <= 14; i++) {
+    for (int i = 1; i <= 14; i++) { // TODO
         NSString *filename = [NSString stringWithFormat:@"s%d.png", i];
         [stampImages addObject:[UIImage imageNamed:filename]];
     }
@@ -78,25 +82,33 @@
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     imageView.image = [self.stamps objectAtIndex:indexPath.item];
 
+    // 選択された表示にする
+    UIView *backgroundView = [[UIView alloc] init];
+    backgroundView.backgroundColor = [UIColor redColor];
+    cell.selectedBackgroundView = backgroundView;
+    
     return cell;
 }
 
 //クリックされたらよばれる
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    // choseStampsにストック
+    [self.choseStamps addObject:[self.stamps objectAtIndex:indexPath.item]];
+
     
     //NSLog(@"Clicked %d-%d-%d",indexPath.section,indexPath.row, indexPath.item);
-    EditImageController *editImageController = [self.navigationController.viewControllers objectAtIndex:[self.navigationController.viewControllers count] - 2];
+//    EditImageController *editImageController = [self.navigationController.viewControllers objectAtIndex:[self.navigationController.viewControllers count] - 2];
     
     // 前の画面にスタンプ画像を渡す
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    imageView.image = [self.stamps objectAtIndex:indexPath.item];
-    editImageController.currentStampView = imageView;
-    editImageController.isPressStamp = YES;
+//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
+//    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+//    imageView.image = [self.stamps objectAtIndex:indexPath.item];
+//    editImageController.currentStampView = imageView;
+//    editImageController.isPressStamp = YES;
     
     // 前の画面に戻る
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

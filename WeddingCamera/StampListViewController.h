@@ -11,5 +11,6 @@
 @interface StampListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *stampListView;
 @property (nonatomic, strong) NSArray *stamps;
+@property (nonatomic, strong) NSMutableArray *choseStamps;
 
 @end
