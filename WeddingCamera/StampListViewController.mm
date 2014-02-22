@@ -10,7 +10,6 @@
 #import "EditImageController.h"
 
 @interface StampListViewController ()
-
 @end
 
 @implementation StampListViewController

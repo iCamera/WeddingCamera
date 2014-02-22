@@ -17,11 +17,10 @@
 
 @synthesize editImage;
 @synthesize editImageView;
-@synthesize dummyView;
 @synthesize isPressStamp;
 @synthesize currentStampView;
 @synthesize filter;
-
+@synthesize editToolBar;
 
 - (void)viewDidLoad
 {
@@ -31,9 +30,7 @@
 
     // 選択した画像を設定
     editImageView.image = editImage;
-    
-    dummyView.hidden = TRUE;
-    
+        
     // 最初はスタンプモードでない
     isPressStamp = NO;
     
@@ -59,24 +56,33 @@
 // スタンプを選択するViewをaddする
 - (IBAction)chooseStampAction:(id)sender {
     
-    StampListViewController * stampListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StampListViewController"];
-    [stampListViewController.view setFrame: CGRectMake(0, 436, 320, 200)]; // TODO
+    StampListViewController *stampListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StampListViewController"];
+    
+    CGRect screenFrame = [[UIScreen mainScreen] applicationFrame];
+    [stampListViewController.view setFrame: CGRectMake(
+                                                       0,
+                                                       editToolBar.frame.origin.y,
+                                                       screenFrame.size.width,
+                                                       floor(screenFrame.size.height*0.4)
+                                                       )
+    ];
     [self addChildViewController:stampListViewController];
     [stampListViewController didMoveToParentViewController:self];
     [self.view addSubview:stampListViewController.view];
     
     UIView *stampListView = stampListViewController.view;
+    
     [UIView
         animateWithDuration:0.3
         animations:^{
-            CGFloat originY = dummyView.frame.origin.y;
+            CGFloat originY = screenFrame.size.height - editToolBar.frame.size.height - stampListView.frame.size.height;
             CGRect frame = stampListView.frame;
             frame.origin.y = originY;
             stampListView.frame = frame;
         }
         completion:^(BOOL finished){
-        
-    }];
+        }
+    ];
 
 }
 

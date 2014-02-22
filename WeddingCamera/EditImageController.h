@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIImage *editImage;
 @property (weak, nonatomic) IBOutlet UIImageView *editImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *currentStampView;  // 貼り付け中のスタンプ画像
-@property (weak, nonatomic) IBOutlet UIView *dummyView;
+@property (weak, nonatomic) IBOutlet UIToolbar *editToolBar;
 
 @property (nonatomic, assign) BOOL isPressStamp;  // スタンプ貼り付け中かどうか
 @property (nonatomic,retain) ImageFilterBase *filter;
