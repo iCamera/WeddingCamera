@@ -23,6 +23,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
     return YES;
 }
 							
@@ -73,5 +76,9 @@
     return filters;
 }
 
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"Exception: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+}
 
 @end
