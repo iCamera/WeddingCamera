@@ -23,6 +23,10 @@
 
 - (IBAction)showCameraAction:(id)sender {
     
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera] == NO) {
+            // TODO: 例外処理
+    }
+    
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePickerController.delegate = self;
@@ -32,6 +36,10 @@
 }
 
 - (IBAction)showPhotoAlbumAction:(id)sender {
+
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO) {
+        // TODO: 例外処理
+    }
     
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
@@ -44,7 +52,6 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
-    //[self performSegueWithIdentifier:@"chooseImage" sender:self];
     // 編集画面に遷移
     EditImageController * editImageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditImageController"];
     [self.navigationController pushViewController:editImageViewController animated:YES];
@@ -52,6 +59,25 @@
     // 編集画面に画像を渡す
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     editImageViewController.editImage = image;
+    UIImage *originimage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    CGImageRef hoge = image.CGImage; // Quartz 2D data
+    CGSize fuga = image.size;
+    CGBitmapInfo foo = CGImageGetBitmapInfo(hoge);
+    CGImageRef hoge2 = originimage.CGImage; // Quartz 2D data
+    CGSize fuga2 = originimage.size;
+    CGBitmapInfo foo2 = CGImageGetBitmapInfo(hoge2);
+
+    // TODO: 画像サイズ 640x640にリサイズされてるのかえる
+    //NSValue* value = [info objectForKey:UIImagePickerControllerCropRect];
+    //CGRect rect = [value CGRectValue];
+    
+    // original image
+    //UIImage* oImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //CGImageRef imageRef = CGImageCreateWithImageInRect([imageToCrop CGImage], rect);
+    // cropped image
+    //UIImage *cropped =[UIImage imageWithCGImage:imageRef];
+    //CGImageRelease(imageRef);
     
     // 撮影画面を非表示にする
     [self dismissViewControllerAnimated:TRUE completion:NULL];

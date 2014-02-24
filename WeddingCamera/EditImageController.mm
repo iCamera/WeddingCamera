@@ -138,8 +138,7 @@
     
     // コンテキストの位置を切り取り開始位置に合わせる
     CGPoint point = editImageView.frame.origin;
-    CGAffineTransform affineMoveLeftTop
-    = CGAffineTransformMakeTranslation(
+    CGAffineTransform affineMoveLeftTop = CGAffineTransformMakeTranslation(
                                        -(int)point.x ,
                                        -(int)point.y );
     CGContextConcatCTM(context , affineMoveLeftTop );
