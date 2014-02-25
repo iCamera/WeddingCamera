@@ -96,7 +96,7 @@
     [self.choseStamps addObject:[self.stamps objectAtIndex:indexPath.item]];
 
     
-    //NSLog(@"Clicked %d-%d-%d",indexPath.section,indexPath.row, indexPath.item);
+    NSLog(@"Clicked %d-%d-%d",indexPath.section,indexPath.row, indexPath.item);
 //    EditImageController *editImageController = [self.navigationController.viewControllers objectAtIndex:[self.navigationController.viewControllers count] - 2];
     
     // 前の画面にスタンプ画像を渡す

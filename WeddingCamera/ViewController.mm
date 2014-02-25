@@ -56,32 +56,85 @@
     EditImageController * editImageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditImageController"];
     [self.navigationController pushViewController:editImageViewController animated:YES];
 
-    // 編集画面に画像を渡す
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    editImageViewController.editImage = image;
-    UIImage *originimage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
-    CGImageRef hoge = image.CGImage; // Quartz 2D data
-    CGSize fuga = image.size;
-    CGBitmapInfo foo = CGImageGetBitmapInfo(hoge);
-    CGImageRef hoge2 = originimage.CGImage; // Quartz 2D data
-    CGSize fuga2 = originimage.size;
-    CGBitmapInfo foo2 = CGImageGetBitmapInfo(hoge2);
+    // オリジナル画像をUIImageとして取得
+    UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
 
-    // TODO: 画像サイズ 640x640にリサイズされてるのかえる
-    //NSValue* value = [info objectForKey:UIImagePickerControllerCropRect];
-    //CGRect rect = [value CGRectValue];
+    // ユーザが調整したサイズにトリミング
+    NSValue *value = [info objectForKey:UIImagePickerControllerCropRect];
+    CGRect rect = [value CGRectValue];
+    UIImage *image = [self cropImage:originalImage toRect:rect];
+//    CGImageRef imageRef = CGImageCreateWithImageInRect(originalImage.CGImage, rect);
+//    UIImage *image =[UIImage imageWithCGImage:imageRef];
+
+    CGSize hoge = image.size;
+
+    // 固定サイズにリサイズ
+//    int resize_w = 960;
+//    int resize_h = 960;
+//    UIGraphicsBeginImageContext(CGSizeMake(resize_w, resize_h));
+//    [image drawInRect:CGRectMake(0, 0, resize_w, resize_h)];
+//    image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
     
-    // original image
-    //UIImage* oImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //CGImageRef imageRef = CGImageCreateWithImageInRect([imageToCrop CGImage], rect);
-    // cropped image
-    //UIImage *cropped =[UIImage imageWithCGImage:imageRef];
-    //CGImageRelease(imageRef);
+    CGSize fuga = image.size;
+    
+//    CGImageRelease(imageRef);
+    
+    // 編集画面に画像を渡す
+    editImageViewController.editImage = image;
+    //editImageViewController.editImageView.contentMode = UIViewContentModeScaleAspectFill;
     
     // 撮影画面を非表示にする
     [self dismissViewControllerAnimated:TRUE completion:NULL];
 
+}
+
+static inline double radians (double degrees) {return degrees * M_PI/180;}
+- (UIImage*)cropImage:(UIImage*)sourceImage toRect:(CGRect)rect{
+    
+	CGFloat targetWidth = sourceImage.size.width;
+	CGFloat targetHeight = sourceImage.size.height;
+    
+	CGImageRef imageRef = [sourceImage CGImage];
+	CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(imageRef);
+	CGColorSpaceRef colorSpaceInfo = CGImageGetColorSpace(imageRef);
+    
+	if (bitmapInfo == kCGImageAlphaNone) {
+		bitmapInfo = kCGImageAlphaNoneSkipLast;
+	}
+    
+	CGContextRef bitmap;
+    
+	if (sourceImage.imageOrientation == UIImageOrientationUp || sourceImage.imageOrientation == UIImageOrientationDown) {
+		bitmap = CGBitmapContextCreate(NULL, targetWidth, targetHeight, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpaceInfo, bitmapInfo);
+	} else {
+		bitmap = CGBitmapContextCreate(NULL, targetHeight, targetWidth, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpaceInfo, bitmapInfo);
+	}
+    
+	if (sourceImage.imageOrientation == UIImageOrientationLeft) {
+		CGContextRotateCTM (bitmap, radians(90));
+		CGContextTranslateCTM (bitmap, 0, -targetHeight);
+        
+	} else if (sourceImage.imageOrientation == UIImageOrientationRight) {
+		CGContextRotateCTM (bitmap, radians(-90));
+		CGContextTranslateCTM (bitmap, -targetWidth, 0);
+        
+	} else if (sourceImage.imageOrientation == UIImageOrientationUp) {
+		// NOTHING
+	} else if (sourceImage.imageOrientation == UIImageOrientationDown) {
+		CGContextTranslateCTM (bitmap, targetWidth, targetHeight);
+		CGContextRotateCTM (bitmap, radians(-180.));
+	}
+    
+	CGContextDrawImage(bitmap, CGRectMake(0, 0, targetWidth, targetHeight), imageRef);
+	CGImageRef ref = CGBitmapContextCreateImage(bitmap);
+    ref = CGImageCreateWithImageInRect(ref, rect);
+	UIImage* newImage = [UIImage imageWithCGImage:ref];
+    
+	CGContextRelease(bitmap);
+	CGImageRelease(ref);
+    
+	return newImage; 
 }
 
 - (void)didReceiveMemoryWarning
