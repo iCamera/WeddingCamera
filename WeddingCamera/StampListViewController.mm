@@ -40,6 +40,7 @@
     
     // 複数選択可
     self.stampListView.allowsMultipleSelection = YES;
+    self.choseStamps = [NSMutableArray array];
 
 }
 
@@ -64,7 +65,6 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    //とりあえずセクションは1つ
     return 1;
 }
 
@@ -95,19 +95,8 @@
     // choseStampsにストック
     [self.choseStamps addObject:[self.stamps objectAtIndex:indexPath.item]];
 
-    
     NSLog(@"Clicked %d-%d-%d",indexPath.section,indexPath.row, indexPath.item);
-//    EditImageController *editImageController = [self.navigationController.viewControllers objectAtIndex:[self.navigationController.viewControllers count] - 2];
-    
-    // 前の画面にスタンプ画像を渡す
-//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell1" forIndexPath:indexPath];
-//    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-//    imageView.image = [self.stamps objectAtIndex:indexPath.item];
-//    editImageController.currentStampView = imageView;
-//    editImageController.isPressStamp = YES;
-    
-    // 前の画面に戻る
-//    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 

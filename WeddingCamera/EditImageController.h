@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "ImageFilterBase.h"
+#import "StampListViewController.h"
 
 @interface EditImageController : UIViewController
 
-// TODO: strongでOK?
-@property (strong, nonatomic) IBOutlet UIImage *editImage;
 @property (weak, nonatomic) IBOutlet UIImageView *editImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *currentStampView;  // 貼り付け中のスタンプ画像
+@property (strong, nonatomic) IBOutlet UIImage *editImage;
 @property (weak, nonatomic) IBOutlet UIToolbar *editToolBar;
 
+// stamp
+@property (strong, nonatomic) IBOutlet StampListViewController *stampListViewController;
 @property (nonatomic, assign) BOOL isPressStamp;  // スタンプ貼り付け中かどうか
+
+// filter
 @property (nonatomic,retain) ImageFilterBase *filter;
 
 

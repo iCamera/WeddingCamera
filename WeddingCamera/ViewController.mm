@@ -56,17 +56,13 @@
     EditImageController * editImageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditImageController"];
     [self.navigationController pushViewController:editImageViewController animated:YES];
 
+    // TODO: ユーザが切り取った領域にしてから、980px x 980pxにリサイズする
     // オリジナル画像をUIImageとして取得
-    UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-
-    // ユーザが調整したサイズにトリミング
-    NSValue *value = [info objectForKey:UIImagePickerControllerCropRect];
-    CGRect rect = [value CGRectValue];
-    UIImage *image = [self cropImage:originalImage toRect:rect];
+//    UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+//    NSValue *value = [info objectForKey:UIImagePickerControllerCropRect];
+//    CGRect rect = [value CGRectValue];
 //    CGImageRef imageRef = CGImageCreateWithImageInRect(originalImage.CGImage, rect);
 //    UIImage *image =[UIImage imageWithCGImage:imageRef];
-
-    CGSize hoge = image.size;
 
     // 固定サイズにリサイズ
 //    int resize_w = 960;
@@ -76,13 +72,9 @@
 //    image = UIGraphicsGetImageFromCurrentImageContext();
 //    UIGraphicsEndImageContext();
     
-    CGSize fuga = image.size;
-    
-//    CGImageRelease(imageRef);
-    
     // 編集画面に画像を渡す
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     editImageViewController.editImage = image;
-    //editImageViewController.editImageView.contentMode = UIViewContentModeScaleAspectFill;
     
     // 撮影画面を非表示にする
     [self dismissViewControllerAnimated:TRUE completion:NULL];
@@ -110,6 +102,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	} else {
 		bitmap = CGBitmapContextCreate(NULL, targetHeight, targetWidth, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpaceInfo, bitmapInfo);
 	}
+
     
 	if (sourceImage.imageOrientation == UIImageOrientationLeft) {
 		CGContextRotateCTM (bitmap, radians(90));

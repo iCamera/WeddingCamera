@@ -597,7 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rie Ito (AY7T33R5L4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rie Ito (AY7T33R5L4)";
 				FRAMEWORK_SEARCH_PATHS = /Users/ito.rie/syumi/WeddingCamera;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -621,7 +621,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rie Ito (AY7T33R5L4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rie Ito (AY7T33R5L4)";
 				FRAMEWORK_SEARCH_PATHS = /Users/ito.rie/syumi/WeddingCamera;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
