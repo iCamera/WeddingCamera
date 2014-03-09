@@ -17,6 +17,7 @@
 @synthesize stampListView;
 @synthesize stamps;
 @synthesize choseStamps;
+@synthesize pageControl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,14 +54,19 @@
 
 - (void)loadStamps {
     
+    // TODO: 仮 とりあえずs1~s14まで読み込む
     NSMutableArray *stampImages = [NSMutableArray array];
-    for (int i = 1; i <= 14; i++) { // TODO
+    for (int i = 1; i <= 14; i++) {
         NSString *filename = [NSString stringWithFormat:@"s%d.png", i];
         [stampImages addObject:[UIImage imageNamed:filename]];
     }
-
     self.stamps = stampImages;
-
+    
+    // pageing設定
+    NSInteger pageSize = 3;    
+    self.pageControl.numberOfPages = pageSize;
+    self.pageControl.currentPage = 0;
+    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -88,6 +94,8 @@
     
     return cell;
 }
+
+
 
 //クリックされたらよばれる
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

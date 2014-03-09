@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface StampListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
-@property (weak, nonatomic) IBOutlet UICollectionView *stampListView;
+@property (nonatomic, weak) IBOutlet UICollectionView *stampListView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
 @property (nonatomic, strong) NSMutableArray *stamps;
 @property (nonatomic, strong) NSMutableArray *choseStamps;
-@property (weak, nonatomic) IBOutlet UIPageControl *pager;
+
 
 
 @end

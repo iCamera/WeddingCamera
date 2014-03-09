@@ -16,6 +16,7 @@
 }
 
 @synthesize editImageView;
+@synthesize editImage;
 
 @synthesize stampListViewController;
 @synthesize isPressStamp;
@@ -35,7 +36,6 @@
     editImageView.image = editImage;
     
     // スタンプ
-    stampListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StampListViewController"];
     isPressStamp = FALSE;
     
     // redo, undo
@@ -91,33 +91,8 @@
 
 // スタンプを選択するViewをaddする
 - (IBAction)chooseStampAction:(id)sender {
-    
-    CGRect screenFrame = [[UIScreen mainScreen] applicationFrame];
-    [stampListViewController.view setFrame: CGRectMake(
-                                                       0,
-                                                       editToolBar.frame.origin.y,
-                                                       screenFrame.size.width,
-                                                       floor(screenFrame.size.height*0.4)
-                                                       )
-    ];
-    [self addChildViewController:stampListViewController];
-    [stampListViewController didMoveToParentViewController:self];
-    [self.view addSubview:stampListViewController.view];
-    
-    UIView *stampListView = stampListViewController.view;
-    
-    [UIView
-        animateWithDuration:0.3
-        animations:^{
-            CGFloat originY = screenFrame.size.height - editToolBar.frame.size.height - stampListView.frame.size.height;
-            CGRect frame = stampListView.frame;
-            frame.origin.y = originY;
-            stampListView.frame = frame;
-        }
-        completion:^(BOOL finished){
-        }
-    ];
-    
+
+    self.containerView.hidden = FALSE;
     self.isPressStamp = TRUE;
 
 }
@@ -162,7 +137,7 @@
         self.isPressStamp = FALSE;
         
         // TODO: アニメーション
-        [stampListViewController.view removeFromSuperview];
+        self.containerView.hidden = TRUE;
     }
 }
 

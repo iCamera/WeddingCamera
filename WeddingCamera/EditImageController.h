@@ -13,13 +13,17 @@
 @interface EditImageController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIImageView *editImageView;
+@property (nonatomic, strong) IBOutlet UIImage *editImage;
 @property (nonatomic, weak) IBOutlet UIToolbar *editToolBar;
 
 // stamp
 @property (nonatomic, strong) IBOutlet StampListViewController *stampListViewController;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+
+
 @property (nonatomic, assign) BOOL isPressStamp;  // スタンプ貼り付け中かどうか
-@property (nonatomic, strong) NSMutableArray *undoStack;
-@property (nonatomic, strong) NSMutableArray *redoStack;
+@property (nonatomic, weak) NSMutableArray *undoStack;
+@property (nonatomic, weak) NSMutableArray *redoStack;
 
 // filter
 @property (nonatomic,retain) ImageFilterBase *filter;
