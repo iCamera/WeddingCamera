@@ -15,7 +15,6 @@
     __strong IBOutlet UIImage *editImage;
 }
 
-@synthesize editImage;
 @synthesize editImageView;
 
 @synthesize stampListViewController;
@@ -125,7 +124,7 @@
 
 // フィルターを選択
 - (IBAction)chooseFilterAction:(id)sender {
-    CGImageRef inImage = editImage.CGImage;
+    CGImageRef inImage = editImageView.image.CGImage;
     
     if (filter == nil) {
         // TODO: とりあえずフィルタ実行しちゃう

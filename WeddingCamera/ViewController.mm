@@ -74,7 +74,7 @@
     
     // 編集画面に画像を渡す
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    editImageViewController.editImage = image;
+    editImageViewController.editImageView.image = image;
     
     // 撮影画面を非表示にする
     [self dismissViewControllerAnimated:TRUE completion:NULL];
