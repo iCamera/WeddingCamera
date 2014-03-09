@@ -17,8 +17,12 @@
 
 @synthesize editImage;
 @synthesize editImageView;
-@synthesize isPressStamp;
+
 @synthesize stampListViewController;
+@synthesize isPressStamp;
+@synthesize undoStack;
+@synthesize redoStack;
+
 @synthesize filter;
 @synthesize editToolBar;
 
@@ -35,6 +39,10 @@
     stampListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StampListViewController"];
     isPressStamp = FALSE;
     
+    // redo, undo
+    undoStack = [NSMutableArray array];
+    redoStack = [NSMutableArray array];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,9 +52,36 @@
 }
 
 
+- (IBAction)redoAction:(id)sender {
+    // redoスタックからパスを取り出しundoスタックに追加
+    UIImageView *redoImageView = self.redoStack.lastObject;
+    
+    if (redoImageView) {
+        [self.redoStack removeLastObject];
+        [self.undoStack addObject:redoImageView];
+    
+        // subview追加
+        [self.editImageView addSubview:redoImageView];
+    }
+}
+
+- (IBAction)undoAction:(id)sender {
+    // undoスタックからパスを取り出しredoスタックに追加
+    UIImageView *undoImageView = self.undoStack.lastObject;
+    
+    if (undoImageView) {
+        [self.undoStack removeLastObject];
+        [self.redoStack addObject:undoImageView];
+        
+        // subview削除
+        [undoImageView removeFromSuperview];
+    }
+
+}
+
 - (IBAction)saveImageAction:(id)sender {
     // jpgとして保存
-    UIImage *saveImage = editImageView.image;
+    UIImage *saveImage = [self _composed];
     UIImageWriteToSavedPhotosAlbum(saveImage,NULL,NULL,NULL);
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -117,8 +152,6 @@
 
 // 画像の上のイベントリスナー
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    // 1.anyObjectメソッドでいずれか1つのタッチを取得
-    // 2.locationViewメソッドで対象となるビューのタッチした座標を取得
     CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
     float x = touchPoint.x;    // X座標
     float y = touchPoint.y;    // Y座標
@@ -127,7 +160,6 @@
     if (isPressStamp) {
         
         [self _addStamp:&touchPoint];
-
         self.isPressStamp = FALSE;
         
         // TODO: アニメーション
@@ -135,7 +167,25 @@
     }
 }
 
+
 - (void)_addStamp:(CGPoint*)point {
+    
+    for (int i = 0; i < stampListViewController.choseStamps.count; i++) {
+
+        // TODO: タッチした場所を初期配置とする
+        UIImageView *stampImageView = [[UIImageView alloc] initWithImage: stampListViewController.choseStamps[i]];
+        [self.editImageView addSubview:stampImageView];
+        [self.undoStack addObject:stampImageView];
+        
+    }
+    
+    stampListViewController.choseStamps = [NSMutableArray array];
+    
+}
+
+
+// 元画像とスタンプ画像を合成する
+- (UIImage *)_composed {
     
     CGSize imageSize = editImageView.image.size;
     
@@ -146,26 +196,23 @@
     rect.size = imageSize;
     [editImageView.image drawInRect:rect];
     
-    
-    for (int i = 0; i < stampListViewController.choseStamps.count; i++) {
-
-        UIImage *stamp = stampListViewController.choseStamps[i];
+    for (int i = 0; i < self.undoStack.count; i++) {
+        
+        UIImageView *stampImageView = self.undoStack[i];
         
         //重ね合わせる画像を描画
-        rect.origin = CGPointMake(point->x, point->y);
-        rect.size = stamp.size;
-        [stamp drawInRect:rect];
+        rect.origin = stampImageView.frame.origin;
+        rect.size = stampImageView.frame.size;
+        [stampImageView.image drawInRect:rect];
+        
     }
-   
-    UIImage* shrinkedImage;
-    shrinkedImage = UIGraphicsGetImageFromCurrentImageContext();
-    editImageView.image = shrinkedImage;
+    
+    UIImage* composedImage = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
-    // 初期化
-    stampListViewController.choseStamps = [NSMutableArray array];
-    
+    return composedImage;
 }
+
 
 @end
