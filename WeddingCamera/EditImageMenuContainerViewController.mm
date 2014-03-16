@@ -77,7 +77,7 @@
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
     
-    [self transitionFromViewController:fromViewController toViewController:toViewController duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
+    [self transitionFromViewController:fromViewController toViewController:toViewController duration:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
         self.transitionInProgress = FALSE;
@@ -91,15 +91,13 @@
     if (self.transitionInProgress) {
         return 0;
     }
-    if (self.isOpen) {
+    if ([swapViewName isEqualToString:self.currentSegueIdentifier] && self.isOpen) {
         self.isOpen = FALSE;
         return 0;
     }
-
+    
     self.isOpen = TRUE;
-    if (![swapViewName isEqualToString:self.currentSegueIdentifier]) {
-        self.currentSegueIdentifier = swapViewName;
-    }
+    self.currentSegueIdentifier = swapViewName;
     self.transitionInProgress = TRUE;
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
     return 1;
