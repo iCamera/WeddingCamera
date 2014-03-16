@@ -64,9 +64,11 @@
     
     // pageing設定
     NSInteger pageSize = 3;    
+    [self.pageControl addTarget:self action:@selector(pageControlChanged:) forControlEvents:UIControlEventValueChanged];
     self.pageControl.numberOfPages = pageSize;
-    self.pageControl.currentPage = 0;
+    self.pageControl.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
+    self.pageControl.currentPage = 0;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -95,7 +97,19 @@
     return cell;
 }
 
+- (void)pageControlChanged:(id)sender
+{
+    UIPageControl *chancedPageControl = sender;
+    CGFloat pageWidth = self.stampListView.frame.size.width;
+    CGPoint scrollTo = CGPointMake(pageWidth * chancedPageControl.currentPage, 0);
+    [self.stampListView setContentOffset:scrollTo animated:YES];
+}
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGFloat pageWidth = self.stampListView.frame.size.width;
+    self.pageControl.currentPage = self.stampListView.contentOffset.x / pageWidth;
+}
 
 //クリックされたらよばれる
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
