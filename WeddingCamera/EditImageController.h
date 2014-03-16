@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "ImageFilterBase.h"
 #import "StampListViewController.h"
+#import "EditImageMenuContainerViewController.h"
 
 @interface EditImageController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIImageView *editImageView;
 @property (nonatomic, strong) IBOutlet UIImage *editImage;
 @property (nonatomic, weak) IBOutlet UIToolbar *editToolBar;
+
+@property (nonatomic, strong) IBOutlet EditImageMenuContainerViewController *editImageMenuContainerViewControlelr;
 
 // stamp
 @property (nonatomic, strong) IBOutlet StampListViewController *stampListViewController;

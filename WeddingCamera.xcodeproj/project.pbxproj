@@ -55,6 +55,9 @@
 		DD295A1318799A92003EC0FD /* MultiMonitorFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A0818799A92003EC0FD /* MultiMonitorFilter.mm */; };
 		DD295A151879AC0D003EC0FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD295A141879AC0D003EC0FD /* QuartzCore.framework */; };
 		DD295A1E1879C385003EC0FD /* CollectionCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A1D1879C384003EC0FD /* CollectionCell.mm */; };
+		DD4664B418D5958E00D85832 /* EmptySeque.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD4664B318D5958E00D85832 /* EmptySeque.mm */; };
+		DD4664B718D5974500D85832 /* EditImageMenuContainerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD4664B618D5974500D85832 /* EditImageMenuContainerViewController.mm */; };
+		DD4664BA18D5988C00D85832 /* FilterListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD4664B918D5988C00D85832 /* FilterListViewController.mm */; };
 		DD979DAE188D4D6400CF8C9E /* CollectionCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD295A1D1879C384003EC0FD /* CollectionCell.mm */; };
 		DD979DB1188D4E9B00CF8C9E /* StampListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */; };
 		DD979DB2188D4ED500CF8C9E /* StampListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */; };
@@ -132,6 +135,14 @@
 		DD295A141879AC0D003EC0FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DD295A1C1879C384003EC0FD /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		DD295A1D1879C384003EC0FD /* CollectionCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CollectionCell.mm; sourceTree = "<group>"; };
+		DD4664B218D5958E00D85832 /* EmptySeque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySeque.h; sourceTree = "<group>"; };
+		DD4664B318D5958E00D85832 /* EmptySeque.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EmptySeque.mm; sourceTree = "<group>"; };
+		DD4664B518D5974500D85832 /* EditImageMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditImageMenuContainerViewController.h; sourceTree = "<group>"; };
+		DD4664B618D5974500D85832 /* EditImageMenuContainerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditImageMenuContainerViewController.mm; sourceTree = "<group>"; };
+		DD4664B818D5988C00D85832 /* FilterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterListViewController.h; sourceTree = "<group>"; };
+		DD4664B918D5988C00D85832 /* FilterListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FilterListViewController.mm; sourceTree = "<group>"; };
+		DD4664BB18D59C9400D85832 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "usr/lib/libc++.1.dylib"; sourceTree = SDKROOT; };
+		DD4664BD18D59CFB00D85832 /* libc++abi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++abi.dylib"; path = "usr/lib/libc++abi.dylib"; sourceTree = SDKROOT; };
 		DD979DAF188D4E9B00CF8C9E /* StampListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StampListViewController.h; sourceTree = "<group>"; };
 		DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StampListViewController.mm; sourceTree = "<group>"; };
 		DD979DB4188D69B500CF8C9E /* s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s3.png; sourceTree = "<group>"; };
@@ -269,6 +280,8 @@
 		DDCAF5D61876A80A001196D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD4664BD18D59CFB00D85832 /* libc++abi.dylib */,
+				DD4664BB18D59C9400D85832 /* libc++.1.dylib */,
 				5824CDCD189E197200DAD954 /* opencv2.framework */,
 				5824CDCB189E162B00DAD954 /* libstdc++.dylib */,
 				5824CDC9189E161C00DAD954 /* libc++.dylib */,
@@ -288,15 +301,21 @@
 				DDCAF5E61876A80A001196D4 /* AppDelegate.h */,
 				DDCAF5E71876A80A001196D4 /* AppDelegate.mm */,
 				DDCAF5EF1876A80A001196D4 /* MainStoryboard.storyboard */,
+				DD4664B518D5974500D85832 /* EditImageMenuContainerViewController.h */,
+				DD4664B618D5974500D85832 /* EditImageMenuContainerViewController.mm */,
 				DDCAF5F21876A80A001196D4 /* ViewController.h */,
 				DDCAF5F31876A80A001196D4 /* ViewController.mm */,
 				DD2959D418794B0C003EC0FD /* EditImageController.h */,
 				DD2959D518794B0C003EC0FD /* EditImageController.mm */,
 				DD979DAF188D4E9B00CF8C9E /* StampListViewController.h */,
 				DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */,
+				DD4664B818D5988C00D85832 /* FilterListViewController.h */,
+				DD4664B918D5988C00D85832 /* FilterListViewController.mm */,
 				DD295A1C1879C384003EC0FD /* CollectionCell.h */,
 				DD295A1D1879C384003EC0FD /* CollectionCell.mm */,
 				5834CC39189D6E43008D20CD /* filters */,
+				DD4664B218D5958E00D85832 /* EmptySeque.h */,
+				DD4664B318D5958E00D85832 /* EmptySeque.mm */,
 			);
 			path = WeddingCamera;
 			sourceTree = "<group>";
@@ -464,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5834CC4C189DF0E1008D20CD /* GrayScaleFilter.mm in Sources */,
+				DD4664B718D5974500D85832 /* EditImageMenuContainerViewController.mm in Sources */,
 				5834CC4B189DF0D9008D20CD /* SepiaFilter.mm in Sources */,
 				5834CC4A189DF0D2008D20CD /* MosaicFilter.mm in Sources */,
 				5834CC49189DF0CB008D20CD /* FishEyeFilter.mm in Sources */,
@@ -473,11 +493,13 @@
 				5834CC45189DF0AB008D20CD /* MultiMonitorFilter.mm in Sources */,
 				5834CC44189DF09E008D20CD /* BrightnessFilter.mm in Sources */,
 				5834CC43189DF091008D20CD /* ImageFilterBase.mm in Sources */,
+				DD4664BA18D5988C00D85832 /* FilterListViewController.mm in Sources */,
 				DDCAF5E41876A80A001196D4 /* main.mm in Sources */,
 				DDCAF5E81876A80A001196D4 /* AppDelegate.mm in Sources */,
 				DDCAF5F41876A80A001196D4 /* ViewController.mm in Sources */,
 				DD2959D618794B0C003EC0FD /* EditImageController.mm in Sources */,
 				DD295A1E1879C385003EC0FD /* CollectionCell.mm in Sources */,
+				DD4664B418D5958E00D85832 /* EmptySeque.mm in Sources */,
 				DD979DB1188D4E9B00CF8C9E /* StampListViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,7 +626,7 @@
 				GCC_PREFIX_HEADER = "WeddingCamera/WeddingCamera-Prefix.pch";
 				INFOPLIST_FILE = "WeddingCamera/WeddingCamera-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = /Users/ito.rie/syumi/;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -628,7 +650,7 @@
 				GCC_PREFIX_HEADER = "WeddingCamera/WeddingCamera-Prefix.pch";
 				INFOPLIST_FILE = "WeddingCamera/WeddingCamera-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = /Users/ito.rie/syumi/;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
 					"-lz",

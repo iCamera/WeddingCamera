@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="umN-h4-d7Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="umN-h4-d7Y">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -128,12 +128,12 @@
                                     <action selector="undoAction:" destination="X6u-0i-RNw" eventType="touchUpInside" id="Gke-vU-OsR"/>
                                 </connections>
                             </button>
-                            <containerView hidden="YES" contentMode="scaleToFill" id="fCO-II-2yR">
+                            <containerView contentMode="scaleToFill" id="fCO-II-2yR">
                                 <rect key="frame" x="0.0" y="196" width="320" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="iVk-SL-rxd" kind="embed" id="3B8-PS-Jjp"/>
+                                    <segue destination="dzg-y7-WPw" kind="embed" identifier="embedContainer" id="bmq-Ks-18B"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -171,11 +171,11 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="iVk-SL-rxd" customClass="StampListViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wv7-VJ-fTl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Cxc-kg-qXl" customClass="stampListView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="203"/>
                                 <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BIh-qg-bs0">
                                     <size key="itemSize" width="70" height="70"/>
@@ -202,18 +202,66 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="ygI-B5-tYW">
-                                <rect key="frame" x="0.0" y="160" width="320" height="37"/>
+                                <rect key="frame" x="0.0" y="203" width="320" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="StampListViewController" borderStyle="roundedRect" minimumFontSize="17" id="Kdt-Gz-c4i">
+                                <rect key="frame" x="59" y="121" width="180" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OT8-l9-5QG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="922" y="103"/>
+            <point key="canvasLocation" x="1463" y="-59"/>
+        </scene>
+        <!--Edit Image Menu Container View Controller-->
+        <scene sceneID="2fK-Ni-62j">
+            <objects>
+                <viewController id="dzg-y7-WPw" customClass="EditImageMenuContainerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NdH-Iy-95f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="iVk-SL-rxd" kind="custom" identifier="embedFirst" customClass="EmptySeque" id="nbM-8X-lYF"/>
+                        <segue destination="AQ3-Cw-byk" kind="custom" identifier="embedSecond" customClass="EmptySeque" id="Z6b-Kc-746"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Su1-ow-h30" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="103"/>
+        </scene>
+        <!--Filter List View Controller-->
+        <scene sceneID="Mk2-kj-ekV">
+            <objects>
+                <viewController id="AQ3-Cw-byk" customClass="FilterListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4TD-Kj-SSm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FilterListViewController" borderStyle="roundedRect" minimumFontSize="17" id="hdo-vi-hLO">
+                                <rect key="frame" x="55" y="103" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVh-cN-TmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1463" y="285"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

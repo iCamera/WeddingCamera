@@ -10,6 +10,7 @@
 #import "StampListViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
+#import "EditImageMenuContainerViewController.h"
 
 @implementation EditImageController {
     __strong IBOutlet UIImage *editImage;
@@ -18,6 +19,7 @@
 @synthesize editImageView;
 @synthesize editImage;
 
+@synthesize editImageMenuContainerViewControlelr;
 @synthesize stampListViewController;
 @synthesize isPressStamp;
 @synthesize undoStack;
@@ -33,7 +35,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     // 選択した画像を設定
-    editImageView.image = editImage;
+    self.editImageView.image = editImage;
+    self.containerView.hidden = TRUE;
     
     // スタンプ
     isPressStamp = FALSE;
@@ -89,6 +92,12 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"embedContainer"]) {
+        self.editImageMenuContainerViewControlelr = segue.destinationViewController;
+    }
+}
 // スタンプを選択するViewをaddする
 - (IBAction)chooseStampAction:(id)sender {
 
@@ -99,12 +108,14 @@
 
 // フィルターを選択
 - (IBAction)chooseFilterAction:(id)sender {
-    CGImageRef inImage = editImageView.image.CGImage;
+
+    [self.editImageMenuContainerViewControlelr swapViewControllers];
+    return;
     
+    CGImageRef inImage = editImageView.image.CGImage;
     if (filter == nil) {
         // TODO: とりあえずフィルタ実行しちゃう
         self.filter = [ ((AppDelegate*)[UIApplication sharedApplication].delegate).filters objectAtIndex:2];
-        //self.filter.currentValue = [NSNumber numberWithFloat:0];
     }
     
     CGImageRef filteredImage;

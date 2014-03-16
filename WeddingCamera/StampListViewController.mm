@@ -33,11 +33,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [stampListView setDataSource:self];
-    [stampListView setDelegate:self];
-    
     // stamp画像読み込み
     [self loadStamps];
+    
+    [stampListView setDataSource:self];
+    [stampListView setDelegate:self];
     
     // 複数選択可
     self.stampListView.allowsMultipleSelection = YES;
