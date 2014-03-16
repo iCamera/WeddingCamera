@@ -101,17 +101,29 @@
 // スタンプを選択するViewをaddする
 - (IBAction)chooseStampAction:(id)sender {
 
-    self.containerView.hidden = FALSE;
-    self.isPressStamp = TRUE;
+    int swapResult = [self.editImageMenuContainerViewControlelr swapViewControllers:@"stamp"];
 
+    if (swapResult) {
+        self.containerView.hidden = FALSE;
+        self.isPressStamp = TRUE;
+    } else {
+        self.containerView.hidden = TRUE;
+        self.isPressStamp = TRUE;
+    }
+    
 }
 
 // フィルターを選択
 - (IBAction)chooseFilterAction:(id)sender {
 
-    [self.editImageMenuContainerViewControlelr swapViewControllers];
-    return;
+    int swapResult = [self.editImageMenuContainerViewControlelr swapViewControllers:@"filter"];
+    if (swapResult) {
+        self.containerView.hidden = FALSE;
+    } else {
+        self.containerView.hidden = TRUE;
+    }
     
+    return; // TODO: あとで消す
     CGImageRef inImage = editImageView.image.CGImage;
     if (filter == nil) {
         // TODO: とりあえずフィルタ実行しちゃう

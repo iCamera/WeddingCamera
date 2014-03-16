@@ -232,8 +232,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="iVk-SL-rxd" kind="custom" identifier="embedFirst" customClass="EmptySeque" id="nbM-8X-lYF"/>
-                        <segue destination="AQ3-Cw-byk" kind="custom" identifier="embedSecond" customClass="EmptySeque" id="Z6b-Kc-746"/>
+                        <segue destination="iVk-SL-rxd" kind="custom" identifier="stamp" customClass="EmptySeque" id="nbM-8X-lYF"/>
+                        <segue destination="AQ3-Cw-byk" kind="custom" identifier="filter" customClass="EmptySeque" id="Z6b-Kc-746"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Su1-ow-h30" userLabel="First Responder" sceneMemberID="firstResponder"/>

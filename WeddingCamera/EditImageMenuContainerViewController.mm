@@ -10,8 +10,8 @@
 #import "StampListViewController.h"
 #import "FilterListViewController.h"
 
-#define segueStampListView @"embedFirst"
-#define segueFilterListView @"embedSecond"
+#define segueStampListView @"stamp"
+#define segueFilterListView @"filter"
 
 @interface EditImageMenuContainerViewController ()
 
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) StampListViewController *stampListViewController;
 @property (strong, nonatomic) FilterListViewController *filterListViewController;
 @property (assign, nonatomic) BOOL transitionInProgress;
+@property (assign, nonatomic) BOOL isOpen;
 
 @end
 
@@ -37,8 +38,9 @@
 {
     [super viewDidLoad];
     
-    self.transitionInProgress = NO;
-    self.currentSegueIdentifier = segueStampListView;
+    self.transitionInProgress = FALSE;
+    self.isOpen = FALSE;
+    self.currentSegueIdentifier = segueFilterListView;
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
 }
 
@@ -50,38 +52,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Instead of creating new VCs on each seque we want to hang on to existing
-    // instances if we have it. Remove the second condition of the following
-    // two if statements to get new VC instances instead.
     if (([segue.identifier isEqualToString:segueStampListView]) && !self.stampListViewController) {
         self.stampListViewController = segue.destinationViewController;
-    }
-    
-    if (([segue.identifier isEqualToString:segueFilterListView]) && !self.filterListViewController) {
+    } else if (([segue.identifier isEqualToString:segueFilterListView]) && !self.filterListViewController) {
         self.filterListViewController = segue.destinationViewController;
     }
     
-    // If we're going to the first view controller.
-    if ([segue.identifier isEqualToString:segueStampListView]) {
-        // If this is not the first time we're loading this.
-        if (self.childViewControllers.count > 0) {
-            [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.stampListViewController];
-        }
-        else {
-            // If this is the very first time we're loading this we need to do
-            // an initial load and not a swap.
-            [self addChildViewController:segue.destinationViewController];
-            UIView* destView = ((UIViewController *)segue.destinationViewController).view;
-            destView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-            [self.view addSubview:destView];
-            [segue.destinationViewController didMoveToParentViewController:self];
-        }
-    }
-    // By definition the second view controller will always be swapped with the
-    // first one.
-    else if ([segue.identifier isEqualToString:segueFilterListView]) {
-        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.filterListViewController];
+    if (self.childViewControllers.count > 0) {
+        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
+    } else {
+        [self addChildViewController:segue.destinationViewController];
+        UIView* destView = ((UIViewController *)segue.destinationViewController).view;
+        destView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [self.view addSubview:destView];
+        [segue.destinationViewController didMoveToParentViewController:self];
     }
 }
 
@@ -95,20 +80,29 @@
     [self transitionFromViewController:fromViewController toViewController:toViewController duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
-        self.transitionInProgress = NO;
+        self.transitionInProgress = FALSE;
     }];
 }
 
-- (void)swapViewControllers
+// 0: 何もしない 1: 画面切り替えた
+- (int)swapViewControllers:(NSString *)swapViewName
 {
     
     if (self.transitionInProgress) {
-        return;
+        return 0;
     }
-    
-    self.transitionInProgress = YES;
-    self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:segueStampListView]) ? segueFilterListView : segueStampListView;
+    if (self.isOpen) {
+        self.isOpen = FALSE;
+        return 0;
+    }
+
+    self.isOpen = TRUE;
+    if (![swapViewName isEqualToString:self.currentSegueIdentifier]) {
+        self.currentSegueIdentifier = swapViewName;
+    }
+    self.transitionInProgress = TRUE;
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    return 1;
 }
 
 @end

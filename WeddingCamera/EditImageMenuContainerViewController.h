@@ -10,6 +10,6 @@
 
 @interface EditImageMenuContainerViewController : UIViewController
 
-- (void)swapViewControllers;
+- (int)swapViewControllers: swapViewName;
 
 @end

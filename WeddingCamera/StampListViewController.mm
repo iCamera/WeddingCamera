@@ -34,6 +34,7 @@
 	// Do any additional setup after loading the view.
     
     // stamp画像読み込み
+    // TODO: load読み込まれてる?
     [self loadStamps];
     
     [stampListView setDataSource:self];
