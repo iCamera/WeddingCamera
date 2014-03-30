@@ -73,7 +73,7 @@
     
     // TODO: 仮 とりあえずs1~s14まで読み込む
     NSMutableArray *stampImages = [NSMutableArray array];
-    for (int i = 1; i <= 12; i++) {
+    for (int i = 1; i <= 16; i++) {
         NSString *filename = [NSString stringWithFormat:@"s%d.png", i];
         [stampImages addObject:[UIImage imageNamed:filename]];
     }
@@ -110,13 +110,6 @@
     CGFloat pageWidth = self.stampListView.frame.size.width;
     int currentPage = floor((self.stampListView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = currentPage;
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    CGFloat pageWidth = self.stampListView.frame.size.width;
-    NSLog(@"%f", self.stampListView.contentOffset.x);
-    self.pageControl.currentPage = self.stampListView.contentOffset.x / pageWidth;
 }
 
 //クリックされたらよばれる
