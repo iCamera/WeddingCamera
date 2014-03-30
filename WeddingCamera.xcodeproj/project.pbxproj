@@ -63,6 +63,7 @@
 		DD979DB2188D4ED500CF8C9E /* StampListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */; };
 		DD979DB6188D69B500CF8C9E /* s3.png in Resources */ = {isa = PBXBuildFile; fileRef = DD979DB4188D69B500CF8C9E /* s3.png */; };
 		DD979DB7188D69B500CF8C9E /* s4.png in Resources */ = {isa = PBXBuildFile; fileRef = DD979DB5188D69B500CF8C9E /* s4.png */; };
+		DDBEE7A518E869740066FABB /* snil.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBEE7A418E869740066FABB /* snil.png */; };
 		DDCAF5D81876A80A001196D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D71876A80A001196D4 /* UIKit.framework */; };
 		DDCAF5DA1876A80A001196D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5D91876A80A001196D4 /* Foundation.framework */; };
 		DDCAF5DC1876A80A001196D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCAF5DB1876A80A001196D4 /* CoreGraphics.framework */; };
@@ -147,6 +148,7 @@
 		DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StampListViewController.mm; sourceTree = "<group>"; };
 		DD979DB4188D69B500CF8C9E /* s3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s3.png; sourceTree = "<group>"; };
 		DD979DB5188D69B500CF8C9E /* s4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s4.png; sourceTree = "<group>"; };
+		DDBEE7A418E869740066FABB /* snil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snil.png; sourceTree = "<group>"; };
 		DDCAF5D31876A80A001196D4 /* WeddingCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeddingCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCAF5D71876A80A001196D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDCAF5D91876A80A001196D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -243,6 +245,7 @@
 				5836FE2118AD145C0012C54C /* s7.png */,
 				5836FE2218AD145C0012C54C /* s8.png */,
 				5836FE2318AD145C0012C54C /* s9.png */,
+				DDBEE7A418E869740066FABB /* snil.png */,
 				5836FE2418AD145C0012C54C /* s10.png */,
 				5836FE2518AD145C0012C54C /* s11.png */,
 				5836FE2618AD145C0012C54C /* s12.png */,
@@ -301,18 +304,18 @@
 				DDCAF5E61876A80A001196D4 /* AppDelegate.h */,
 				DDCAF5E71876A80A001196D4 /* AppDelegate.mm */,
 				DDCAF5EF1876A80A001196D4 /* MainStoryboard.storyboard */,
-				DD4664B518D5974500D85832 /* EditImageMenuContainerViewController.h */,
-				DD4664B618D5974500D85832 /* EditImageMenuContainerViewController.mm */,
 				DDCAF5F21876A80A001196D4 /* ViewController.h */,
 				DDCAF5F31876A80A001196D4 /* ViewController.mm */,
 				DD2959D418794B0C003EC0FD /* EditImageController.h */,
 				DD2959D518794B0C003EC0FD /* EditImageController.mm */,
+				DD4664B518D5974500D85832 /* EditImageMenuContainerViewController.h */,
+				DD4664B618D5974500D85832 /* EditImageMenuContainerViewController.mm */,
 				DD979DAF188D4E9B00CF8C9E /* StampListViewController.h */,
 				DD979DB0188D4E9B00CF8C9E /* StampListViewController.mm */,
-				DD4664B818D5988C00D85832 /* FilterListViewController.h */,
-				DD4664B918D5988C00D85832 /* FilterListViewController.mm */,
 				DD295A1C1879C384003EC0FD /* CollectionCell.h */,
 				DD295A1D1879C384003EC0FD /* CollectionCell.mm */,
+				DD4664B818D5988C00D85832 /* FilterListViewController.h */,
+				DD4664B918D5988C00D85832 /* FilterListViewController.mm */,
 				5834CC39189D6E43008D20CD /* filters */,
 				DD4664B218D5958E00D85832 /* EmptySeque.h */,
 				DD4664B318D5958E00D85832 /* EmptySeque.mm */,
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5836FE2E18AD145C0012C54C /* s10.png in Resources */,
+				DDBEE7A518E869740066FABB /* snil.png in Resources */,
 				5836FE2C18AD145C0012C54C /* s8.png in Resources */,
 				DDCAF5E21876A80A001196D4 /* InfoPlist.strings in Resources */,
 				DDCAF5EA1876A80A001196D4 /* Default.png in Resources */,

@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) NSMutableArray *stamps;
 @property (nonatomic, strong) NSMutableArray *choseStamps;
-
+@property int pageSize;
 
 
 @end
