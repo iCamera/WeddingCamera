@@ -8,11 +8,9 @@
 
 #import "FilterListViewController.h"
 
-@interface FilterListViewController ()
-
-@end
-
 @implementation FilterListViewController
+
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +25,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+}
+
+- (IBAction)applyFilter:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(didappliyFilter)]) {
+        [self.delegate didappliyFilter];
+    }
 }
 
 - (void)didReceiveMemoryWarning

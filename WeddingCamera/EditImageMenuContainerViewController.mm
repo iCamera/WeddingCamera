@@ -7,23 +7,19 @@
 //
 
 #import "EditImageMenuContainerViewController.h"
-#import "StampListViewController.h"
-#import "FilterListViewController.h"
 
 #define segueStampListView @"stamp"
 #define segueFilterListView @"filter"
 
-@interface EditImageMenuContainerViewController ()
+@implementation EditImageMenuContainerViewController {
+    
+}
 
-@property (strong, nonatomic) NSString *currentSegueIdentifier;
-@property (strong, nonatomic) StampListViewController *stampListViewController;
-@property (strong, nonatomic) FilterListViewController *filterListViewController;
-@property (assign, nonatomic) BOOL transitionInProgress;
-@property (assign, nonatomic) BOOL isOpen;
-
-@end
-
-@implementation EditImageMenuContainerViewController
+@synthesize currentSegueIdentifier;
+@synthesize stampListViewController;
+@synthesize filterListViewController;
+@synthesize transitionInProgress;
+@synthesize isOpen;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

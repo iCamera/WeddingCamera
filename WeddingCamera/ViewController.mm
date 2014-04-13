@@ -56,22 +56,6 @@
     EditImageController * editImageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EditImageController"];
     [self.navigationController pushViewController:editImageViewController animated:YES];
 
-    // TODO: ユーザが切り取った領域にしてから、980px x 980pxにリサイズする
-    // オリジナル画像をUIImageとして取得
-//    UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-//    NSValue *value = [info objectForKey:UIImagePickerControllerCropRect];
-//    CGRect rect = [value CGRectValue];
-//    CGImageRef imageRef = CGImageCreateWithImageInRect(originalImage.CGImage, rect);
-//    UIImage *image =[UIImage imageWithCGImage:imageRef];
-
-    // 固定サイズにリサイズ
-//    int resize_w = 960;
-//    int resize_h = 960;
-//    UIGraphicsBeginImageContext(CGSizeMake(resize_w, resize_h));
-//    [image drawInRect:CGRectMake(0, 0, resize_w, resize_h)];
-//    image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-    
     // 編集画面に画像を渡す
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     editImageViewController.editImage = image;

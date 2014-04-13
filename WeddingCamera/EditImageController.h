@@ -8,34 +8,34 @@
 
 #import <UIKit/UIKit.h>
 #import "ImageFilterBase.h"
-#import "StampListViewController.h"
 #import "EditImageMenuContainerViewController.h"
 
-@interface EditImageController : UIViewController
+@interface EditImageController : UIViewController<FilterListDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *editImageView;
 @property (nonatomic, strong) IBOutlet UIImage *editImage;
-@property (nonatomic, weak) IBOutlet UIToolbar *editToolBar;
+@property float scale;
 
+// footerから選択されて表示するsub view
 @property (nonatomic, strong) IBOutlet EditImageMenuContainerViewController *editImageMenuContainerViewControlelr;
-
-// stamp
-@property (nonatomic, strong) IBOutlet StampListViewController *stampListViewController;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+- (IBAction)chooseStampAction:(id)sender;
+- (IBAction)chooseFilterAction:(id)sender;
 
+// スタンプ貼り付け中かどうか
+@property (nonatomic, assign) BOOL isPressStamp;
 
-@property (nonatomic, assign) BOOL isPressStamp;  // スタンプ貼り付け中かどうか
-@property (nonatomic, weak) NSMutableArray *undoStack;
-@property (nonatomic, weak) NSMutableArray *redoStack;
+// 進む、戻る
+@property (nonatomic, strong) NSMutableArray *undoStack;
+@property (nonatomic, strong) NSMutableArray *redoStack;
+- (IBAction)redoAction:(id)sender;
+- (IBAction)undoAction:(id)sender;
 
 // filter
 @property (nonatomic,retain) ImageFilterBase *filter;
 
+// 保存・キャンセル
 - (IBAction)saveImageAction:(id)sender;
 - (IBAction)cancelImageAction:(id)sender;
-- (IBAction)chooseStampAction:(id)sender;
-- (IBAction)chooseFilterAction:(id)sender;
-- (IBAction)redoAction:(id)sender;
-- (IBAction)undoAction:(id)sender;
 
 @end

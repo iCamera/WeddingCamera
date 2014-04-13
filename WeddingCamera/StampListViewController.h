@@ -11,10 +11,10 @@
 @interface StampListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, weak) IBOutlet UICollectionView *stampListView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIScrollView *categoryTabBar;
 
 @property (nonatomic, strong) NSMutableArray *stamps;
-@property (nonatomic, strong) NSMutableArray *choseStamps;
+@property (nonatomic, strong) NSMutableDictionary *choseStampsHash;
 @property int pageSize;
-
 
 @end

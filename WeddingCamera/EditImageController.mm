@@ -7,7 +7,6 @@
 //
 
 #import "EditImageController.h"
-#import "StampListViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
 #import "EditImageMenuContainerViewController.h"
@@ -18,15 +17,14 @@
 
 @synthesize editImageView;
 @synthesize editImage;
+@synthesize scale;
 
 @synthesize editImageMenuContainerViewControlelr;
-@synthesize stampListViewController;
 @synthesize isPressStamp;
 @synthesize undoStack;
 @synthesize redoStack;
 
 @synthesize filter;
-@synthesize editToolBar;
 
 - (void)viewDidLoad
 {
@@ -36,6 +34,10 @@
 
     // 選択した画像を設定
     self.editImageView.image = editImage;
+    
+    // 実際の写真サイズから表示サイズのscaleを取得
+    self.scale = self.editImageView.image.size.width / self.editImageView.frame.size.width;
+    
     self.containerView.hidden = TRUE;
     
     // スタンプ
@@ -107,43 +109,24 @@
         self.containerView.hidden = FALSE;
         self.isPressStamp = TRUE;
     } else {
+        // スタンプの中身消す
         self.containerView.hidden = TRUE;
-        self.isPressStamp = TRUE;
+        self.isPressStamp = FALSE;
     }
     
 }
 
-// フィルターを選択
+// フィルターを選択するViewをaddする
 - (IBAction)chooseFilterAction:(id)sender {
 
+    // フィルターリストを表示
     int swapResult = [self.editImageMenuContainerViewControlelr swapViewControllers:@"filter"];
     if (swapResult) {
         self.containerView.hidden = FALSE;
+        self.editImageMenuContainerViewControlelr.filterListViewController.delegate = self;
     } else {
         self.containerView.hidden = TRUE;
     }
-    
-    return; // TODO: あとで消す
-    CGImageRef inImage = editImageView.image.CGImage;
-    if (filter == nil) {
-        // TODO: とりあえずフィルタ実行しちゃう
-        self.filter = [ ((AppDelegate*)[UIApplication sharedApplication].delegate).filters objectAtIndex:2];
-    }
-    
-    CGImageRef filteredImage;
-    if (filter != nil) {
-        // 選択中のフィルタでフィルタ処理を実行
-        filteredImage = [filter filterImage:inImage];
-    } else {
-        filteredImage = CGImageRetain(inImage);
-    }
-
-    // CGImageをUIImageに変換
-    UIImage* newImage = [UIImage imageWithCGImage:filteredImage];
-    editImageView.image = newImage;
-    
-    CGImageRelease(filteredImage);
-    CGImageRelease(inImage);
     
 }
 
@@ -157,9 +140,9 @@
     if (isPressStamp) {
         
         [self _addStamp:&touchPoint];
+
+        [self.editImageMenuContainerViewControlelr swapViewControllers:@"stamp"];
         self.isPressStamp = FALSE;
-        
-        // TODO: アニメーション
         self.containerView.hidden = TRUE;
     }
 }
@@ -167,20 +150,55 @@
 
 - (void)_addStamp:(CGPoint*)point {
     
-    for (int i = 0; i < stampListViewController.choseStamps.count; i++) {
-
-        // TODO: タッチした場所を初期配置とする
-        UIImageView *stampImageView = [[UIImageView alloc] initWithImage: stampListViewController.choseStamps[i]];
+    // 写真の表示scaleに合わせてスタンプ画像を作る
+    CGPoint editImagePoint = editImageView.frame.origin;
+    
+    NSDictionary *choseStampsHash = self.editImageMenuContainerViewControlelr.stampListViewController.choseStampsHash;
+    NSArray *keys = choseStampsHash.allKeys;
+    for(int i = 0; i < [keys count]; i++){
+        
+        
+        UIImage *stampImage = [choseStampsHash objectForKey: [keys objectAtIndex:(NSUInteger)i]];
+        UIImageView *stampImageView = [[UIImageView alloc] init];
+        stampImageView.frame = CGRectMake(
+                                          (point->x - editImagePoint.x) / scale,
+                                          (point->y - editImagePoint.y) / scale,
+                                          stampImage.size.width / scale,
+                                          stampImage.size.height / scale);
+        stampImageView.image = stampImage;
         [self.editImageView addSubview:stampImageView];
         [self.undoStack addObject:stampImageView];
         
     }
-    
-    stampListViewController.choseStamps = [NSMutableArray array];
-    
 }
 
-
+// FilterListViewControllerのdelegateメソッド
+// TODO: applyFilterボタンが選択されたときに呼ばれたい
+- (void)didappliyFilter
+{
+    NSLog(@"call didappliyFilter");
+    CGImageRef inImage = editImageView.image.CGImage;
+    if (filter == nil) {
+        self.filter = [ ((AppDelegate*)[UIApplication sharedApplication].delegate).filters objectAtIndex:2];
+    }
+    
+    CGImageRef filteredImage;
+    if (filter != nil) {
+        // 選択中のフィルタでフィルタ処理を実行
+        filteredImage = [filter filterImage:inImage];
+    } else {
+        filteredImage = CGImageRetain(inImage);
+    }
+    
+    // CGImageをUIImageに変換
+    UIImage* newImage = [UIImage imageWithCGImage:filteredImage];
+    editImageView.image = newImage;
+    
+    CGImageRelease(filteredImage);
+    CGImageRelease(inImage);
+  
+}
+    
 // 元画像とスタンプ画像を合成する
 - (UIImage *)_composed {
     
@@ -199,7 +217,7 @@
         
         //重ね合わせる画像を描画
         rect.origin = stampImageView.frame.origin;
-        rect.size = stampImageView.frame.size;
+        rect.size = stampImageView.image.size;
         [stampImageView.image drawInRect:rect];
         
     }
